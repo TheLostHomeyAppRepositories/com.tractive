@@ -1,0 +1,28 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Sound",
+    "nl": "Geluid"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/buzzer_control.svg",
+  "insightsTitleTrue": {
+    "en": "Sound turned on",
+    "nl": "Geluid ingeschakeld"
+  },
+  "insightsTitleFalse": {
+    "en": "Sound turned off",
+    "nl": "Geluid uitgeschakeld"
+  },
+  "titleTrue": {
+    "en": "On",
+    "nl": "Aan"
+  },
+  "titleFalse": {
+    "en": "Off",
+    "nl": "Uit"
+  }
+}

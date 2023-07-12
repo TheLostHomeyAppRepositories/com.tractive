@@ -1,0 +1,17 @@
+{
+  "errors": {
+    "401": "Inloggegevens van de Tractive API zijn onjuist",
+    "403": "Tractive API heeft de toegang tot dit apparaat geweigerd",
+    "404": "Apparaat is niet gevonden in Tractive account",
+    "50x": "Tractive API is niet beschikbaar",
+    "network": "Tractive API is niet bereikbaar",
+    "unknown": "Er is een onbekende fout opgetreden",
+    "power_saving_light": "Licht is uitgeschakeld in de WiFi-zone.",
+    "power_saving_sound": "Geluid is uitgeschakeld in de WiFi-zone."
+  },
+  "state": {
+    "not_reporting": "Apparaat is niet verbonden, het apparaat werkt mogelijk niet zoals verwacht.",
+    "out_of_battery": "Batterij is leeg, het apparaat werkt mogelijk niet zoals verwacht.",
+    "shutdown_by_user": "Apparaat is uitgeschakeld, het apparaat werkt mogelijk niet zoals verwacht."
+  }
+}

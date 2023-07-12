@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Light is turned !{{on|off}}",
+    "nl": "Licht is !{{in|uit}}geschakeld"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "LIVE Tracking"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/live_tracking.svg",
+  "insightsTitleTrue": {
+    "en": "LIVE Tracking started",
+    "nl": "LIVE Tracking gestart"
+  },
+  "insightsTitleFalse": {
+    "en": "LIVE Tracking stopped",
+    "nl": "LIVE Tracking gestopt"
+  },
+  "titleTrue": {
+    "en": "On",
+    "nl": "Aan"
+  },
+  "titleFalse": {
+    "en": "Off",
+    "nl": "Uit"
+  }
+}

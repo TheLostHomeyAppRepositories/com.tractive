@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "LIVE Tracking is !{{active|not active}}",
+    "nl": "LIVE Tracking is !{{actief|niet actief}}"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+    }
+  ]
+}

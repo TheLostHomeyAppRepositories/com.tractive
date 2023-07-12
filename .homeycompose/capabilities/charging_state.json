@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Charging",
+    "nl": "Opladen"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/charging_state.svg",
+  "insightsTitleTrue": {
+    "en": "Charging",
+    "nl": "Opladen"
+  },
+  "insightsTitleFalse": {
+    "en": "Charged",
+    "nl": "Opgeladen"
+  }
+}

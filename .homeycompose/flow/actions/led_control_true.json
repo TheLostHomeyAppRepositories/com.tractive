@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Turn on light",
+    "nl": "Licht inschakelen"
+  },
+  "hint": {
+    "en": "This flowcard will turn on the light.",
+    "nl": "Deze kaart schakelt het licht in."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+    }
+  ]
+}

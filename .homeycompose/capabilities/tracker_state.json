@@ -1,0 +1,54 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "State",
+    "nl": "Status"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": null,
+  "values": [
+    {
+      "id": "power_saving",
+      "title": {
+        "en": "In Power Saving Zone",
+        "nl": "In WiFi-zone"
+      }
+    },
+    {
+      "id": "operational",
+      "title": {
+        "en": "Operational",
+        "nl": "Operationeel"
+      }
+    },
+    {
+      "id": "inaccurate_position",
+      "title": {
+        "en": "Inaccurate Location",
+        "nl": "Onnauwkeurige locatie"
+      }
+    },
+    {
+      "id": "no_position",
+      "title": {
+        "en": "No Location",
+        "nl": "Geen locatie"
+      }
+    },
+    {
+      "id": "not_reporting",
+      "title": {
+        "en": "Not Connected",
+        "nl": "Niet verbonden"
+      }
+    },
+    {
+      "id": "shutdown_by_user",
+      "title": {
+        "en": "Turned Off",
+        "nl": "Uitgeschakeld"
+      }
+    }
+  ]
+}

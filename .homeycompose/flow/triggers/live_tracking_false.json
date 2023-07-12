@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "LIVE Tracking was stopped",
+    "nl": "LIVE Tracking werd gestopt"
+  },
+  "hint": {
+    "en": "This flowcard triggers when LIVE Tracking was stopped.",
+    "nl": "Deze kaart wordt geactiveerd wanneer LIVE Tracking gestopt werd."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+    }
+  ]
+}

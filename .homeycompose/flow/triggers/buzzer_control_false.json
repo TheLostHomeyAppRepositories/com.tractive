@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Sound was turned off",
+    "nl": "Geluid werd uitgeschakeld"
+  },
+  "hint": {
+    "en": "This flowcard triggers when the sound was turned off.",
+    "nl": "Deze kaart wordt geactiveerd wanneer het geluid uitgeschakeld werd."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+    }
+  ]
+}

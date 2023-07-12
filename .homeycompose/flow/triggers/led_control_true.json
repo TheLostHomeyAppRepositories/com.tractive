@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Light was turned on",
+    "nl": "Licht werd ingeschakeld"
+  },
+  "hint": {
+    "en": "This flowcard triggers when the light was turned on.",
+    "nl": "Deze kaart wordt geactiveerd wanneer het licht ingeschakeld werd."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Light",
+    "nl": "Licht"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/led_control.svg",
+  "insightsTitleTrue": {
+    "en": "Light turned on",
+    "nl": "Licht ingeschakeld"
+  },
+  "insightsTitleFalse": {
+    "en": "Light turned off",
+    "nl": "Licht uitgeschakeld"
+  },
+  "titleTrue": {
+    "en": "On",
+    "nl": "Aan"
+  },
+  "titleFalse": {
+    "en": "Off",
+    "nl": "Uit"
+  }
+}

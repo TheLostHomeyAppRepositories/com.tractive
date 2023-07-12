@@ -1,0 +1,84 @@
+{
+  "id": "com.tractive",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "sdk": 3,
+  "brandColor": "#007FC8",
+  "name": {
+    "en": "Tractive"
+  },
+  "description": {
+    "en": "GPS tracker for pets",
+    "nl": "GPS-tracker voor huisdieren"
+  },
+  "category": [
+    "localization"
+  ],
+  "tags": {
+    "en": [
+      "tractive",
+      "gps",
+      "track",
+      "tracker",
+      "follow",
+      "animal",
+      "animals",
+      "pet",
+      "pets",
+      "dogs",
+      "dog",
+      "cats",
+      "cat"
+    ],
+    "nl": [
+      "tractive",
+      "gps",
+      "track",
+      "tracker",
+      "volgen",
+      "dier",
+      "dieren",
+      "huisdier",
+      "huisdieren",
+      "honden",
+      "hond",
+      "katten",
+      "kat"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "permissions": [],
+  "author": {
+    "name": "Edwin van de Pol",
+    "email": "developer@edwinvandepol.nl"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Edwin van de Pol",
+        "email": "developer@edwinvandepol.nl"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "edwinvdpol"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://community.homey.app/t/84378"
+  },
+  "homeyCommunityTopicId": 84378,
+  "homepage": "https://tractive.com",
+  "support": "mailto:developer@edwinvandepol.nl"
+}

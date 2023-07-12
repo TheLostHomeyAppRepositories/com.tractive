@@ -1,0 +1,25 @@
+{
+  "name": {
+    "en": "Dog Tracker",
+    "nl": "Hondentracker"
+  },
+  "class": "other",
+  "capabilities": [
+    "measure_battery",
+    "charging_state",
+    "buzzer_control",
+    "live_tracking",
+    "led_control",
+    "tracker_state",
+    "altitude",
+    "speed"
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "$extends": [
+    "defaults"
+  ]
+}

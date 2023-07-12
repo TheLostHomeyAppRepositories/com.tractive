@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Start LIVE Tracking",
+    "nl": "LIVE Tracking starten"
+  },
+  "hint": {
+    "en": "This flowcard will start LIVE Tracking.",
+    "nl": "Deze kaart start LIVE Tracking."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+    }
+  ]
+}

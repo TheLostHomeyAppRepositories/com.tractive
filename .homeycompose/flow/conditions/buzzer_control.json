@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Sound is turned !{{on|off}}",
+    "nl": "Geluid is !{{in|uit}}geschakeld"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+    }
+  ]
+}

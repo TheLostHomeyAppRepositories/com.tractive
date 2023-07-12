@@ -1,0 +1,935 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.tractive",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "sdk": 3,
+  "brandColor": "#007FC8",
+  "name": {
+    "en": "Tractive"
+  },
+  "description": {
+    "en": "GPS tracker for pets",
+    "nl": "GPS-tracker voor huisdieren"
+  },
+  "category": [
+    "localization"
+  ],
+  "tags": {
+    "en": [
+      "tractive",
+      "gps",
+      "track",
+      "tracker",
+      "follow",
+      "animal",
+      "animals",
+      "pet",
+      "pets",
+      "dogs",
+      "dog",
+      "cats",
+      "cat"
+    ],
+    "nl": [
+      "tractive",
+      "gps",
+      "track",
+      "tracker",
+      "volgen",
+      "dier",
+      "dieren",
+      "huisdier",
+      "huisdieren",
+      "honden",
+      "hond",
+      "katten",
+      "kat"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "permissions": [],
+  "author": {
+    "name": "Edwin van de Pol",
+    "email": "developer@edwinvandepol.nl"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Edwin van de Pol",
+        "email": "developer@edwinvandepol.nl"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "edwinvdpol"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://community.homey.app/t/84378"
+  },
+  "homeyCommunityTopicId": 84378,
+  "homepage": "https://tractive.com",
+  "support": "mailto:developer@edwinvandepol.nl",
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Altitude has changed",
+          "nl": "Hoogte is veranderd"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the altitude has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de hoogte veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "tokens": [
+          {
+            "name": "altitude",
+            "title": {
+              "en": "Altitude (m)",
+              "nl": "Hoogte (m)"
+            },
+            "type": "number",
+            "example": 25
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+          }
+        ],
+        "id": "altitude_changed"
+      },
+      {
+        "title": {
+          "en": "Sound was turned off",
+          "nl": "Geluid werd uitgeschakeld"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the sound was turned off.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het geluid uitgeschakeld werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+          }
+        ],
+        "id": "buzzer_control_false"
+      },
+      {
+        "title": {
+          "en": "Sound was turned on",
+          "nl": "Geluid werd ingeschakeld"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the sound was turned on.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het geluid ingeschakeld werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+          }
+        ],
+        "id": "buzzer_control_true"
+      },
+      {
+        "title": {
+          "en": "Light was turned off",
+          "nl": "Licht werd uitgeschakeld"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the light was turned off.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het licht uitgeschakeld werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+          }
+        ],
+        "id": "led_control_false"
+      },
+      {
+        "title": {
+          "en": "Light was turned on",
+          "nl": "Licht werd ingeschakeld"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the light was turned on.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het licht ingeschakeld werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+          }
+        ],
+        "id": "led_control_true"
+      },
+      {
+        "title": {
+          "en": "LIVE Tracking was stopped",
+          "nl": "LIVE Tracking werd gestopt"
+        },
+        "hint": {
+          "en": "This flowcard triggers when LIVE Tracking was stopped.",
+          "nl": "Deze kaart wordt geactiveerd wanneer LIVE Tracking gestopt werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+          }
+        ],
+        "id": "live_tracking_false"
+      },
+      {
+        "title": {
+          "en": "LIVE Tracking was started",
+          "nl": "LIVE Tracking werd gestart"
+        },
+        "hint": {
+          "en": "This flowcard triggers when LIVE Tracking was started.",
+          "nl": "Deze kaart wordt geactiveerd wanneer LIVE Tracking gestart werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+          }
+        ],
+        "id": "live_tracking_true"
+      },
+      {
+        "title": {
+          "en": "Speed has changed",
+          "nl": "Snelheid is veranderd"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the speed has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de snelheid veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "tokens": [
+          {
+            "name": "speed",
+            "title": {
+              "en": "Speed (m/s)",
+              "nl": "Snelheid (m/s)"
+            },
+            "type": "number",
+            "example": 1.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=speed"
+          }
+        ],
+        "id": "speed_changed"
+      },
+      {
+        "title": {
+          "en": "State has changed",
+          "nl": "Status is veranderd"
+        },
+        "titleFormatted": {
+          "en": "State has changed to [[state]]",
+          "nl": "Status is veranderd naar [[state]]"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the tracker state has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de trackerstatus veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "title": {
+              "en": "State",
+              "nl": "Status"
+            },
+            "type": "dropdown",
+            "name": "state",
+            "values": [
+              {
+                "id": "power_saving",
+                "title": {
+                  "en": "In Power Saving Zone",
+                  "nl": "In WiFi-zone"
+                }
+              },
+              {
+                "id": "operational",
+                "title": {
+                  "en": "Operational",
+                  "nl": "Operationeel"
+                }
+              },
+              {
+                "id": "inaccurate_position",
+                "title": {
+                  "en": "Inaccurate Location",
+                  "nl": "Onnauwkeurige locatie"
+                }
+              },
+              {
+                "id": "no_position",
+                "title": {
+                  "en": "No Location",
+                  "nl": "Geen locatie"
+                }
+              },
+              {
+                "id": "not_reporting",
+                "title": {
+                  "en": "Not Connected",
+                  "nl": "Niet verbonden"
+                }
+              },
+              {
+                "id": "shutdown_by_user",
+                "title": {
+                  "en": "Turned Off",
+                  "nl": "Uitgeschakeld"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=tracker_state"
+          }
+        ],
+        "id": "tracker_state_changed"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Sound is turned !{{on|off}}",
+          "nl": "Geluid is !{{in|uit}}geschakeld"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+          }
+        ],
+        "id": "buzzer_control"
+      },
+      {
+        "title": {
+          "en": "!{{Is|Is not}} charging",
+          "nl": "!{{Is|Is niet}} aan het opladen"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=charging_state"
+          }
+        ],
+        "id": "charging_state"
+      },
+      {
+        "title": {
+          "en": "Light is turned !{{on|off}}",
+          "nl": "Licht is !{{in|uit}}geschakeld"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+          }
+        ],
+        "id": "led_control"
+      },
+      {
+        "title": {
+          "en": "LIVE Tracking is !{{active|not active}}",
+          "nl": "LIVE Tracking is !{{actief|niet actief}}"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+          }
+        ],
+        "id": "live_tracking"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Turn off sound",
+          "nl": "Geluid uitschakelen"
+        },
+        "hint": {
+          "en": "This flowcard will turn off the sound.",
+          "nl": "Deze kaart schakelt het geluid uit."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+          }
+        ],
+        "id": "buzzer_control_false"
+      },
+      {
+        "title": {
+          "en": "Turn on sound",
+          "nl": "Geluid inschakelen"
+        },
+        "hint": {
+          "en": "This flowcard will turn on the sound.",
+          "nl": "Deze kaart schakelt het geluid in."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+          }
+        ],
+        "id": "buzzer_control_true"
+      },
+      {
+        "title": {
+          "en": "Turn off light",
+          "nl": "Licht uitschakelen"
+        },
+        "hint": {
+          "en": "This flowcard will turn off the light.",
+          "nl": "Deze kaart schakelt het licht uit."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+          }
+        ],
+        "id": "led_control_false"
+      },
+      {
+        "title": {
+          "en": "Turn on light",
+          "nl": "Licht inschakelen"
+        },
+        "hint": {
+          "en": "This flowcard will turn on the light.",
+          "nl": "Deze kaart schakelt het licht in."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+          }
+        ],
+        "id": "led_control_true"
+      },
+      {
+        "title": {
+          "en": "Stop LIVE Tracking",
+          "nl": "LIVE Tracking stoppen"
+        },
+        "hint": {
+          "en": "This flowcard will stop LIVE Tracking.",
+          "nl": "Deze kaart stopt LIVE Tracking."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+          }
+        ],
+        "id": "live_tracking_false"
+      },
+      {
+        "title": {
+          "en": "Start LIVE Tracking",
+          "nl": "LIVE Tracking starten"
+        },
+        "hint": {
+          "en": "This flowcard will start LIVE Tracking.",
+          "nl": "Deze kaart start LIVE Tracking."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+          }
+        ],
+        "id": "live_tracking_true"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "images": {
+        "small": "/drivers/cat_tracker/assets/images/small.png",
+        "large": "/drivers/cat_tracker/assets/images/large.png",
+        "xlarge": "/drivers/cat_tracker/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../../../assets/logo.png"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../../../assets/logo.png"
+          }
+        }
+      ],
+      "name": {
+        "en": "Cat Tracker",
+        "nl": "Kattentracker"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_battery",
+        "charging_state",
+        "buzzer_control",
+        "live_tracking",
+        "led_control",
+        "tracker_state",
+        "altitude",
+        "speed"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "id": "cat_tracker",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General",
+            "nl": "Algemeen"
+          },
+          "children": [
+            {
+              "id": "model_number",
+              "type": "label",
+              "label": {
+                "en": "Model Number",
+                "nl": "Modelnummer"
+              },
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "images": {
+        "small": "/drivers/dog_tracker/assets/images/small.png",
+        "large": "/drivers/dog_tracker/assets/images/large.png",
+        "xlarge": "/drivers/dog_tracker/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../../../assets/logo.png"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../../../assets/logo.png"
+          }
+        }
+      ],
+      "name": {
+        "en": "Dog Tracker",
+        "nl": "Hondentracker"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_battery",
+        "charging_state",
+        "buzzer_control",
+        "live_tracking",
+        "led_control",
+        "tracker_state",
+        "altitude",
+        "speed"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "id": "dog_tracker",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General",
+            "nl": "Algemeen"
+          },
+          "children": [
+            {
+              "id": "model_number",
+              "type": "label",
+              "label": {
+                "en": "Model Number",
+                "nl": "Modelnummer"
+              },
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "altitude": {
+      "type": "number",
+      "title": {
+        "en": "Altitude",
+        "nl": "Hoogte"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/altitude.svg",
+      "units": {
+        "en": "m"
+      },
+      "decimals": 0
+    },
+    "buzzer_control": {
+      "type": "boolean",
+      "title": {
+        "en": "Sound",
+        "nl": "Geluid"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/buzzer_control.svg",
+      "insightsTitleTrue": {
+        "en": "Sound turned on",
+        "nl": "Geluid ingeschakeld"
+      },
+      "insightsTitleFalse": {
+        "en": "Sound turned off",
+        "nl": "Geluid uitgeschakeld"
+      },
+      "titleTrue": {
+        "en": "On",
+        "nl": "Aan"
+      },
+      "titleFalse": {
+        "en": "Off",
+        "nl": "Uit"
+      }
+    },
+    "charging_state": {
+      "type": "boolean",
+      "title": {
+        "en": "Charging",
+        "nl": "Opladen"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/charging_state.svg",
+      "insightsTitleTrue": {
+        "en": "Charging",
+        "nl": "Opladen"
+      },
+      "insightsTitleFalse": {
+        "en": "Charged",
+        "nl": "Opgeladen"
+      }
+    },
+    "led_control": {
+      "type": "boolean",
+      "title": {
+        "en": "Light",
+        "nl": "Licht"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/led_control.svg",
+      "insightsTitleTrue": {
+        "en": "Light turned on",
+        "nl": "Licht ingeschakeld"
+      },
+      "insightsTitleFalse": {
+        "en": "Light turned off",
+        "nl": "Licht uitgeschakeld"
+      },
+      "titleTrue": {
+        "en": "On",
+        "nl": "Aan"
+      },
+      "titleFalse": {
+        "en": "Off",
+        "nl": "Uit"
+      }
+    },
+    "live_tracking": {
+      "type": "boolean",
+      "title": {
+        "en": "LIVE Tracking"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/live_tracking.svg",
+      "insightsTitleTrue": {
+        "en": "LIVE Tracking started",
+        "nl": "LIVE Tracking gestart"
+      },
+      "insightsTitleFalse": {
+        "en": "LIVE Tracking stopped",
+        "nl": "LIVE Tracking gestopt"
+      },
+      "titleTrue": {
+        "en": "On",
+        "nl": "Aan"
+      },
+      "titleFalse": {
+        "en": "Off",
+        "nl": "Uit"
+      }
+    },
+    "speed": {
+      "type": "number",
+      "title": {
+        "en": "Speed",
+        "nl": "Snelheid"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/speed.svg",
+      "units": {
+        "en": "m/s"
+      },
+      "min": 0,
+      "decimals": 1
+    },
+    "tracker_state": {
+      "type": "enum",
+      "title": {
+        "en": "State",
+        "nl": "Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null,
+      "values": [
+        {
+          "id": "power_saving",
+          "title": {
+            "en": "In Power Saving Zone",
+            "nl": "In WiFi-zone"
+          }
+        },
+        {
+          "id": "operational",
+          "title": {
+            "en": "Operational",
+            "nl": "Operationeel"
+          }
+        },
+        {
+          "id": "inaccurate_position",
+          "title": {
+            "en": "Inaccurate Location",
+            "nl": "Onnauwkeurige locatie"
+          }
+        },
+        {
+          "id": "no_position",
+          "title": {
+            "en": "No Location",
+            "nl": "Geen locatie"
+          }
+        },
+        {
+          "id": "not_reporting",
+          "title": {
+            "en": "Not Connected",
+            "nl": "Niet verbonden"
+          }
+        },
+        {
+          "id": "shutdown_by_user",
+          "title": {
+            "en": "Turned Off",
+            "nl": "Uitgeschakeld"
+          }
+        }
+      ]
+    }
+  }
+}

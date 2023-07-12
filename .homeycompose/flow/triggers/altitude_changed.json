@@ -1,0 +1,32 @@
+{
+  "title": {
+    "en": "Altitude has changed",
+    "nl": "Hoogte is veranderd"
+  },
+  "hint": {
+    "en": "This flowcard is activated when the altitude has changed.",
+    "nl": "Deze kaart wordt geactiveerd wanneer de hoogte veranderd is."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "tokens": [
+    {
+      "name": "altitude",
+      "title": {
+        "en": "Altitude (m)",
+        "nl": "Hoogte (m)"
+      },
+      "type": "number",
+      "example": 25
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+    }
+  ]
+}
