@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Position Time",
+    "nl": "Positie tijd"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": null
+}

@@ -251,6 +251,28 @@
       },
       {
         "title": {
+          "en": "GPS location has changed",
+          "nl": "GPS-locatie is veranderd"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the the GPS location has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de GPS-locatie veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=position_time"
+          }
+        ],
+        "id": "position_time_changed"
+      },
+      {
+        "title": {
           "en": "Speed has changed",
           "nl": "Snelheid is veranderd"
         },
@@ -943,6 +965,16 @@
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/latlong.svg",
       "decimals": 6
+    },
+    "position_time": {
+      "type": "number",
+      "title": {
+        "en": "Position Time",
+        "nl": "Positie tijd"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null
     },
     "speed": {
       "type": "number",
