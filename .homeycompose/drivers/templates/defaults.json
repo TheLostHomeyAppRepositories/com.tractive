@@ -1,4 +1,5 @@
 {
+  "class": "other",
   "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -11,6 +12,53 @@
   "connectivity": [
     "cloud"
   ],
+  "capabilities": [
+    "measure_battery",
+    "charging_state",
+    "buzzer_control",
+    "live_tracking",
+    "led_control",
+    "tracker_state",
+    "altitude",
+    "speed"
+  ],
+  "capabilitiesOptions": {
+    "buzzer_control": {
+      "titleTrue": {
+        "en": "On",
+        "nl": "Aan"
+      },
+      "titleFalse": {
+        "en": "Off",
+        "nl": "Uit"
+      }
+    },
+    "led_control": {
+      "titleTrue": {
+        "en": "On",
+        "nl": "Aan"
+      },
+      "titleFalse": {
+        "en": "Off",
+        "nl": "Uit"
+      }
+    },
+    "live_tracking": {
+      "titleTrue": {
+        "en": "On",
+        "nl": "Aan"
+      },
+      "titleFalse": {
+        "en": "Off",
+        "nl": "Uit"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
   "pair": [
     {
       "id": "login_credentials",

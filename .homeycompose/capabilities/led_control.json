@@ -16,13 +16,5 @@
   "insightsTitleFalse": {
     "en": "Light turned off",
     "nl": "Licht uitgeschakeld"
-  },
-  "titleTrue": {
-    "en": "On",
-    "nl": "Aan"
-  },
-  "titleFalse": {
-    "en": "Off",
-    "nl": "Uit"
   }
 }

@@ -16,13 +16,5 @@
   "insightsTitleFalse": {
     "en": "Sound turned off",
     "nl": "Geluid uitgeschakeld"
-  },
-  "titleTrue": {
-    "en": "On",
-    "nl": "Aan"
-  },
-  "titleFalse": {
-    "en": "Off",
-    "nl": "Uit"
   }
 }

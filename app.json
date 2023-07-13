@@ -572,6 +572,7 @@
   },
   "drivers": [
     {
+      "class": "other",
       "images": {
         "small": "/drivers/cat_tracker/assets/images/small.png",
         "large": "/drivers/cat_tracker/assets/images/large.png",
@@ -584,6 +585,53 @@
       "connectivity": [
         "cloud"
       ],
+      "capabilities": [
+        "measure_battery",
+        "charging_state",
+        "buzzer_control",
+        "live_tracking",
+        "led_control",
+        "tracker_state",
+        "altitude",
+        "speed"
+      ],
+      "capabilitiesOptions": {
+        "buzzer_control": {
+          "titleTrue": {
+            "en": "On",
+            "nl": "Aan"
+          },
+          "titleFalse": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        },
+        "led_control": {
+          "titleTrue": {
+            "en": "On",
+            "nl": "Aan"
+          },
+          "titleFalse": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        },
+        "live_tracking": {
+          "titleTrue": {
+            "en": "On",
+            "nl": "Aan"
+          },
+          "titleFalse": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "pair": [
         {
           "id": "login_credentials",
@@ -617,22 +665,6 @@
         "en": "Cat Tracker",
         "nl": "Kattentracker"
       },
-      "class": "other",
-      "capabilities": [
-        "measure_battery",
-        "charging_state",
-        "buzzer_control",
-        "live_tracking",
-        "led_control",
-        "tracker_state",
-        "altitude",
-        "speed"
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
       "id": "cat_tracker",
       "settings": [
         {
@@ -665,6 +697,7 @@
       ]
     },
     {
+      "class": "other",
       "images": {
         "small": "/drivers/dog_tracker/assets/images/small.png",
         "large": "/drivers/dog_tracker/assets/images/large.png",
@@ -677,6 +710,53 @@
       "connectivity": [
         "cloud"
       ],
+      "capabilities": [
+        "measure_battery",
+        "charging_state",
+        "buzzer_control",
+        "live_tracking",
+        "led_control",
+        "tracker_state",
+        "altitude",
+        "speed"
+      ],
+      "capabilitiesOptions": {
+        "buzzer_control": {
+          "titleTrue": {
+            "en": "On",
+            "nl": "Aan"
+          },
+          "titleFalse": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        },
+        "led_control": {
+          "titleTrue": {
+            "en": "On",
+            "nl": "Aan"
+          },
+          "titleFalse": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        },
+        "live_tracking": {
+          "titleTrue": {
+            "en": "On",
+            "nl": "Aan"
+          },
+          "titleFalse": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "pair": [
         {
           "id": "login_credentials",
@@ -709,22 +789,6 @@
       "name": {
         "en": "Dog Tracker",
         "nl": "Hondentracker"
-      },
-      "class": "other",
-      "capabilities": [
-        "measure_battery",
-        "charging_state",
-        "buzzer_control",
-        "live_tracking",
-        "led_control",
-        "tracker_state",
-        "altitude",
-        "speed"
-      ],
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
       },
       "id": "dog_tracker",
       "settings": [
@@ -793,14 +857,6 @@
       "insightsTitleFalse": {
         "en": "Sound turned off",
         "nl": "Geluid uitgeschakeld"
-      },
-      "titleTrue": {
-        "en": "On",
-        "nl": "Aan"
-      },
-      "titleFalse": {
-        "en": "Off",
-        "nl": "Uit"
       }
     },
     "charging_state": {
@@ -841,14 +897,6 @@
       "insightsTitleFalse": {
         "en": "Light turned off",
         "nl": "Licht uitgeschakeld"
-      },
-      "titleTrue": {
-        "en": "On",
-        "nl": "Aan"
-      },
-      "titleFalse": {
-        "en": "Off",
-        "nl": "Uit"
       }
     },
     "live_tracking": {
@@ -868,14 +916,6 @@
       "insightsTitleFalse": {
         "en": "LIVE Tracking stopped",
         "nl": "LIVE Tracking gestopt"
-      },
-      "titleTrue": {
-        "en": "On",
-        "nl": "Aan"
-      },
-      "titleFalse": {
-        "en": "Off",
-        "nl": "Uit"
       }
     },
     "speed": {

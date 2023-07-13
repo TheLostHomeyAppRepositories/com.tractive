@@ -15,13 +15,5 @@
   "insightsTitleFalse": {
     "en": "LIVE Tracking stopped",
     "nl": "LIVE Tracking gestopt"
-  },
-  "titleTrue": {
-    "en": "On",
-    "nl": "Aan"
-  },
-  "titleFalse": {
-    "en": "Off",
-    "nl": "Uit"
   }
 }
