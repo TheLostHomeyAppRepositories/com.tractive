@@ -670,8 +670,7 @@
         {
           "type": "group",
           "label": {
-            "en": "Product Information",
-            "nl": "Productinformatie"
+            "en": "Product"
           },
           "children": [
             {
@@ -795,8 +794,7 @@
         {
           "type": "group",
           "label": {
-            "en": "Product Information",
-            "nl": "Productinformatie"
+            "en": "Product"
           },
           "children": [
             {

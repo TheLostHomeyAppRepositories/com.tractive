@@ -2,8 +2,7 @@
   {
     "type": "group",
     "label": {
-      "en": "Product Information",
-      "nl": "Productinformatie"
+      "en": "Product"
     },
     "children": [
       {
