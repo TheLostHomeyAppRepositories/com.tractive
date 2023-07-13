@@ -911,8 +911,7 @@
       },
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/capabilities/latlong.svg",
+      "uiComponent": null,
       "decimals": 6
     },
     "led_control": {
@@ -962,8 +961,7 @@
       },
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/capabilities/latlong.svg",
+      "uiComponent": null,
       "decimals": 6
     },
     "position_time": {

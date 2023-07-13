@@ -6,7 +6,6 @@
   },
   "getable": true,
   "setable": false,
-  "uiComponent": "sensor",
-  "icon": "/assets/capabilities/latlong.svg",
+  "uiComponent": null,
   "decimals": 6
 }
