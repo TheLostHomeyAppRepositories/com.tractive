@@ -638,16 +638,25 @@
         {
           "type": "group",
           "label": {
-            "en": "General",
-            "nl": "Algemeen"
+            "en": "Product Information",
+            "nl": "Productinformatie"
           },
           "children": [
             {
-              "id": "model_number",
+              "id": "product_name",
               "type": "label",
               "label": {
-                "en": "Model Number",
-                "nl": "Modelnummer"
+                "en": "Name",
+                "nl": "Naam"
+              },
+              "value": "-"
+            },
+            {
+              "id": "model_name",
+              "type": "label",
+              "label": {
+                "en": "Model",
+                "nl": "Model"
               },
               "value": "-"
             }
@@ -722,16 +731,25 @@
         {
           "type": "group",
           "label": {
-            "en": "General",
-            "nl": "Algemeen"
+            "en": "Product Information",
+            "nl": "Productinformatie"
           },
           "children": [
             {
-              "id": "model_number",
+              "id": "product_name",
               "type": "label",
               "label": {
-                "en": "Model Number",
-                "nl": "Modelnummer"
+                "en": "Name",
+                "nl": "Naam"
+              },
+              "value": "-"
+            },
+            {
+              "id": "model_name",
+              "type": "label",
+              "label": {
+                "en": "Model",
+                "nl": "Model"
               },
               "value": "-"
             }
