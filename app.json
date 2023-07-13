@@ -593,7 +593,9 @@
         "led_control",
         "tracker_state",
         "altitude",
-        "speed"
+        "speed",
+        "latitude",
+        "longitude"
       ],
       "capabilitiesOptions": {
         "buzzer_control": {
@@ -717,7 +719,9 @@
         "led_control",
         "tracker_state",
         "altitude",
-        "speed"
+        "speed",
+        "latitude",
+        "longitude"
       ],
       "capabilitiesOptions": {
         "buzzer_control": {
@@ -877,6 +881,18 @@
         "nl": "Opgeladen"
       }
     },
+    "latitude": {
+      "type": "number",
+      "title": {
+        "en": "Latitude",
+        "nl": "Breedtegraad"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/latlong.svg",
+      "decimals": 6
+    },
     "led_control": {
       "type": "boolean",
       "title": {
@@ -915,6 +931,18 @@
         "en": "LIVE Tracking stopped",
         "nl": "LIVE Tracking gestopt"
       }
+    },
+    "longitude": {
+      "type": "number",
+      "title": {
+        "en": "Longitude",
+        "nl": "Lengtegraad"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/latlong.svg",
+      "decimals": 6
     },
     "speed": {
       "type": "number",

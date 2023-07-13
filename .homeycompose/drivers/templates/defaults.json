@@ -20,7 +20,9 @@
     "led_control",
     "tracker_state",
     "altitude",
-    "speed"
+    "speed",
+    "latitude",
+    "longitude"
   ],
   "capabilitiesOptions": {
     "buzzer_control": {
