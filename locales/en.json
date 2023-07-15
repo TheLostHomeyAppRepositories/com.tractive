@@ -4,6 +4,7 @@
     "403": "Tractive API has denied access to this device",
     "404": "Device not found in Tractive account",
     "50x": "Tractive API is unavailable",
+    "command": "Tractive API action failed",
     "network": "Tractive API is unreachable",
     "unknown": "An unknown error has occurred",
     "power_saving_light": "Light is disabled in the Power Saving Zone.",

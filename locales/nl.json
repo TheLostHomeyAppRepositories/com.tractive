@@ -4,6 +4,7 @@
     "403": "Tractive API heeft de toegang tot dit apparaat geweigerd",
     "404": "Apparaat is niet gevonden in Tractive account",
     "50x": "Tractive API is niet beschikbaar",
+    "command": "Tractive API actie mislukt",
     "network": "Tractive API is niet bereikbaar",
     "unknown": "Er is een onbekende fout opgetreden",
     "power_saving_light": "Licht is uitgeschakeld in de WiFi-zone.",
