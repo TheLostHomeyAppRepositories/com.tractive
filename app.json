@@ -119,6 +119,77 @@
       },
       {
         "title": {
+          "en": "Battery state has changed",
+          "nl": "Batterijstatus is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Battery state has changed to [[battery_state]]",
+          "nl": "Batterijstatus is veranderd naar [[battery_state]]"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the battery state has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de batterijstatus veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "title": {
+              "en": "State",
+              "nl": "Status"
+            },
+            "type": "dropdown",
+            "name": "battery_state",
+            "values": [
+              {
+                "id": "full",
+                "title": {
+                  "en": "Full",
+                  "nl": "Vol"
+                }
+              },
+              {
+                "id": "regular",
+                "title": {
+                  "en": "Normal",
+                  "nl": "Normaal"
+                }
+              },
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low",
+                  "nl": "Laag"
+                }
+              },
+              {
+                "id": "critical",
+                "title": {
+                  "en": "Critical",
+                  "nl": "Kritisch"
+                }
+              },
+              {
+                "id": "empty",
+                "title": {
+                  "en": "Empty",
+                  "nl": "Leeg"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=battery_state"
+          }
+        ],
+        "id": "battery_state_changed"
+      },
+      {
+        "title": {
           "en": "Sound was turned off",
           "nl": "Geluid werd uitgeschakeld"
         },
@@ -306,12 +377,12 @@
       },
       {
         "title": {
-          "en": "State has changed",
-          "nl": "Status is veranderd"
+          "en": "Tracker state has changed",
+          "nl": "Trackerstatus is veranderd"
         },
         "titleFormatted": {
-          "en": "State has changed to [[state]]",
-          "nl": "Status is veranderd naar [[state]]"
+          "en": "Tracker state has changed to [[tracker_state]]",
+          "nl": "Trackerstatus is veranderd naar [[tracker_state]]"
         },
         "hint": {
           "en": "This flowcard is activated when the tracker state has changed.",
@@ -328,7 +399,7 @@
               "nl": "Status"
             },
             "type": "dropdown",
-            "name": "state",
+            "name": "tracker_state",
             "values": [
               {
                 "id": "power_saving",
@@ -610,6 +681,7 @@
       "capabilities": [
         "measure_battery",
         "charging_state",
+        "battery_state",
         "buzzer_control",
         "live_tracking",
         "led_control",
@@ -736,6 +808,7 @@
       "capabilities": [
         "measure_battery",
         "charging_state",
+        "battery_state",
         "buzzer_control",
         "live_tracking",
         "led_control",
@@ -862,6 +935,54 @@
         "en": "m"
       },
       "decimals": 0
+    },
+    "battery_state": {
+      "type": "enum",
+      "title": {
+        "en": "Battery",
+        "nl": "Batterij"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/battery.svg",
+      "values": [
+        {
+          "id": "full",
+          "title": {
+            "en": "Full",
+            "nl": "Vol"
+          }
+        },
+        {
+          "id": "regular",
+          "title": {
+            "en": "Normal",
+            "nl": "Normaal"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag"
+          }
+        },
+        {
+          "id": "critical",
+          "title": {
+            "en": "Critical",
+            "nl": "Kritisch"
+          }
+        },
+        {
+          "id": "empty",
+          "title": {
+            "en": "Empty",
+            "nl": "Leeg"
+          }
+        }
+      ]
     },
     "buzzer_control": {
       "type": "boolean",

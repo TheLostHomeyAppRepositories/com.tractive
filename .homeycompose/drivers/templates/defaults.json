@@ -15,6 +15,7 @@
   "capabilities": [
     "measure_battery",
     "charging_state",
+    "battery_state",
     "buzzer_control",
     "live_tracking",
     "led_control",

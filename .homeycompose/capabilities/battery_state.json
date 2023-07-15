@@ -1,0 +1,48 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Battery",
+    "nl": "Batterij"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/battery.svg",
+  "values": [
+    {
+      "id": "full",
+      "title": {
+        "en": "Full",
+        "nl": "Vol"
+      }
+    },
+    {
+      "id": "regular",
+      "title": {
+        "en": "Normal",
+        "nl": "Normaal"
+      }
+    },
+    {
+      "id": "low",
+      "title": {
+        "en": "Low",
+        "nl": "Laag"
+      }
+    },
+    {
+      "id": "critical",
+      "title": {
+        "en": "Critical",
+        "nl": "Kritisch"
+      }
+    },
+    {
+      "id": "empty",
+      "title": {
+        "en": "Empty",
+        "nl": "Leeg"
+      }
+    }
+  ]
+}

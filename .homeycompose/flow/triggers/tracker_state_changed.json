@@ -1,11 +1,11 @@
 {
   "title": {
-    "en": "State has changed",
-    "nl": "Status is veranderd"
+    "en": "Tracker state has changed",
+    "nl": "Trackerstatus is veranderd"
   },
   "titleFormatted": {
-    "en": "State has changed to [[state]]",
-    "nl": "Status is veranderd naar [[state]]"
+    "en": "Tracker state has changed to [[tracker_state]]",
+    "nl": "Trackerstatus is veranderd naar [[tracker_state]]"
   },
   "hint": {
     "en": "This flowcard is activated when the tracker state has changed.",
@@ -22,7 +22,7 @@
         "nl": "Status"
       },
       "type": "dropdown",
-      "name": "state",
+      "name": "tracker_state",
       "values": [
         {
           "id": "power_saving",
