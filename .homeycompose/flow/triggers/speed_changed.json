@@ -13,12 +13,12 @@
   ],
   "tokens": [
     {
+      "type": "number",
       "name": "speed",
       "title": {
         "en": "Speed (m/s)",
         "nl": "Snelheid (m/s)"
       },
-      "type": "number",
       "example": 1.5
     }
   ],

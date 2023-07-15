@@ -99,12 +99,12 @@
         ],
         "tokens": [
           {
+            "type": "number",
             "name": "altitude",
             "title": {
               "en": "Altitude (m)",
               "nl": "Hoogte (m)"
             },
-            "type": "number",
             "example": 25
           }
         ],
@@ -136,46 +136,46 @@
         ],
         "args": [
           {
-            "title": {
-              "en": "State",
-              "nl": "Status"
-            },
             "type": "dropdown",
+            "title": {
+              "en": "state",
+              "nl": "status"
+            },
             "name": "battery_state",
             "values": [
               {
                 "id": "full",
                 "title": {
-                  "en": "Full",
-                  "nl": "Vol"
+                  "en": "full",
+                  "nl": "vol"
                 }
               },
               {
                 "id": "regular",
                 "title": {
-                  "en": "Normal",
-                  "nl": "Normaal"
+                  "en": "normal",
+                  "nl": "normaal"
                 }
               },
               {
                 "id": "low",
                 "title": {
-                  "en": "Low",
-                  "nl": "Laag"
+                  "en": "low",
+                  "nl": "laag"
                 }
               },
               {
                 "id": "critical",
                 "title": {
-                  "en": "Critical",
-                  "nl": "Kritisch"
+                  "en": "critical",
+                  "nl": "kritisch"
                 }
               },
               {
                 "id": "empty",
                 "title": {
-                  "en": "Empty",
-                  "nl": "Leeg"
+                  "en": "empty",
+                  "nl": "leeg"
                 }
               }
             ]
@@ -357,12 +357,12 @@
         ],
         "tokens": [
           {
+            "type": "number",
             "name": "speed",
             "title": {
               "en": "Speed (m/s)",
               "nl": "Snelheid (m/s)"
             },
-            "type": "number",
             "example": 1.5
           }
         ],
@@ -394,53 +394,53 @@
         ],
         "args": [
           {
-            "title": {
-              "en": "State",
-              "nl": "Status"
-            },
             "type": "dropdown",
+            "title": {
+              "en": "state",
+              "nl": "status"
+            },
             "name": "tracker_state",
             "values": [
               {
                 "id": "power_saving",
                 "title": {
-                  "en": "In Power Saving Zone",
-                  "nl": "In WiFi-zone"
+                  "en": "in Power Saving Zone",
+                  "nl": "in WiFi-zone"
                 }
               },
               {
                 "id": "operational",
                 "title": {
-                  "en": "Operational",
-                  "nl": "Operationeel"
+                  "en": "operational",
+                  "nl": "operationeel"
                 }
               },
               {
                 "id": "inaccurate_position",
                 "title": {
-                  "en": "Inaccurate Location",
-                  "nl": "Onnauwkeurige locatie"
+                  "en": "inaccurate Location",
+                  "nl": "onnauwkeurige locatie"
                 }
               },
               {
                 "id": "no_position",
                 "title": {
-                  "en": "No Location",
-                  "nl": "Geen locatie"
+                  "en": "no Location",
+                  "nl": "geen locatie"
                 }
               },
               {
                 "id": "not_reporting",
                 "title": {
-                  "en": "Not Connected",
-                  "nl": "Niet verbonden"
+                  "en": "not connected",
+                  "nl": "niet verbonden"
                 }
               },
               {
                 "id": "shutdown_by_user",
                 "title": {
-                  "en": "Turned Off",
-                  "nl": "Uitgeschakeld"
+                  "en": "turned Off",
+                  "nl": "uitgeschakeld"
                 }
               }
             ]
@@ -455,6 +455,73 @@
       }
     ],
     "conditions": [
+      {
+        "title": {
+          "en": "Battery state !{{is|is not}}",
+          "nl": "Batterijstatus !{{is|is niet}}"
+        },
+        "titleFormatted": {
+          "en": "Battery state !{{is|is not}} equal to [[battery_state]]",
+          "nl": "Batterijstatus !{{is|is niet}} gelijk aan [[battery_state]]"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "dropdown",
+            "title": {
+              "en": "state",
+              "nl": "status"
+            },
+            "name": "battery_state",
+            "values": [
+              {
+                "id": "full",
+                "title": {
+                  "en": "full",
+                  "nl": "vol"
+                }
+              },
+              {
+                "id": "regular",
+                "title": {
+                  "en": "normal",
+                  "nl": "normaal"
+                }
+              },
+              {
+                "id": "low",
+                "title": {
+                  "en": "low",
+                  "nl": "laag"
+                }
+              },
+              {
+                "id": "critical",
+                "title": {
+                  "en": "critical",
+                  "nl": "kritisch"
+                }
+              },
+              {
+                "id": "empty",
+                "title": {
+                  "en": "empty",
+                  "nl": "leeg"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=battery_state"
+          }
+        ],
+        "id": "battery_state"
+      },
       {
         "title": {
           "en": "Sound is turned !{{on|off}}",
@@ -526,6 +593,80 @@
           }
         ],
         "id": "live_tracking"
+      },
+      {
+        "title": {
+          "en": "Tracker state !{{is|is not}}",
+          "nl": "Trackerstatus !{{is|is niet}}"
+        },
+        "titleFormatted": {
+          "en": "Tracker state !{{is|is not}} equal to [[tracker_state]]",
+          "nl": "Trackerstatus !{{is|is niet}} gelijk aan [[tracker_state]]"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "dropdown",
+            "title": {
+              "en": "state",
+              "nl": "status"
+            },
+            "name": "tracker_state",
+            "values": [
+              {
+                "id": "power_saving",
+                "title": {
+                  "en": "in Power Saving Zone",
+                  "nl": "in WiFi-zone"
+                }
+              },
+              {
+                "id": "operational",
+                "title": {
+                  "en": "operational",
+                  "nl": "operationeel"
+                }
+              },
+              {
+                "id": "inaccurate_position",
+                "title": {
+                  "en": "inaccurate location",
+                  "nl": "onnauwkeurige locatie"
+                }
+              },
+              {
+                "id": "no_position",
+                "title": {
+                  "en": "no Location",
+                  "nl": "geen locatie"
+                }
+              },
+              {
+                "id": "not_reporting",
+                "title": {
+                  "en": "not connected",
+                  "nl": "niet verbonden"
+                }
+              },
+              {
+                "id": "shutdown_by_user",
+                "title": {
+                  "en": "turned Off",
+                  "nl": "uitgeschakeld"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=tracker_state"
+          }
+        ],
+        "id": "tracker_state"
       }
     ],
     "actions": [
@@ -1115,8 +1256,8 @@
     "tracker_state": {
       "type": "enum",
       "title": {
-        "en": "State",
-        "nl": "Status"
+        "en": "Tracker State",
+        "nl": "Trackerstatus"
       },
       "getable": true,
       "setable": false,

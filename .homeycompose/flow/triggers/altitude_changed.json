@@ -13,12 +13,12 @@
   ],
   "tokens": [
     {
+      "type": "number",
       "name": "altitude",
       "title": {
         "en": "Altitude (m)",
         "nl": "Hoogte (m)"
       },
-      "type": "number",
       "example": 25
     }
   ],

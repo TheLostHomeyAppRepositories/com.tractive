@@ -1,8 +1,8 @@
 {
   "type": "enum",
   "title": {
-    "en": "State",
-    "nl": "Status"
+    "en": "Tracker State",
+    "nl": "Trackerstatus"
   },
   "getable": true,
   "setable": false,

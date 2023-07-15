@@ -1,15 +1,11 @@
 {
   "title": {
-    "en": "Battery state has changed",
-    "nl": "Batterijstatus is veranderd"
+    "en": "Battery state !{{is|is not}}",
+    "nl": "Batterijstatus !{{is|is niet}}"
   },
   "titleFormatted": {
-    "en": "Battery state has changed to [[battery_state]]",
-    "nl": "Batterijstatus is veranderd naar [[battery_state]]"
-  },
-  "hint": {
-    "en": "This flowcard is activated when the battery state has changed.",
-    "nl": "Deze kaart wordt geactiveerd wanneer de batterijstatus veranderd is."
+    "en": "Battery state !{{is|is not}} equal to [[battery_state]]",
+    "nl": "Batterijstatus !{{is|is niet}} gelijk aan [[battery_state]]"
   },
   "platforms": [
     "local",

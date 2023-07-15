@@ -1,15 +1,11 @@
 {
   "title": {
-    "en": "Tracker state has changed",
-    "nl": "Trackerstatus is veranderd"
+    "en": "Tracker state !{{is|is not}}",
+    "nl": "Trackerstatus !{{is|is niet}}"
   },
   "titleFormatted": {
-    "en": "Tracker state has changed to [[tracker_state]]",
-    "nl": "Trackerstatus is veranderd naar [[tracker_state]]"
-  },
-  "hint": {
-    "en": "This flowcard is activated when the tracker state has changed.",
-    "nl": "Deze kaart wordt geactiveerd wanneer de trackerstatus veranderd is."
+    "en": "Tracker state !{{is|is not}} equal to [[tracker_state]]",
+    "nl": "Trackerstatus !{{is|is niet}} gelijk aan [[tracker_state]]"
   },
   "platforms": [
     "local",
@@ -41,7 +37,7 @@
         {
           "id": "inaccurate_position",
           "title": {
-            "en": "inaccurate Location",
+            "en": "inaccurate location",
             "nl": "onnauwkeurige locatie"
           }
         },
