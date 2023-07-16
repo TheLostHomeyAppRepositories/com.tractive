@@ -333,14 +333,76 @@
           "local",
           "cloud"
         ],
+        "tokens": [
+          {
+            "type": "string",
+            "name": "street",
+            "title": {
+              "en": "Street",
+              "nl": "Straat"
+            },
+            "example": {
+              "en": "Oxford Street",
+              "nl": "Prinsengracht"
+            }
+          },
+          {
+            "type": "string",
+            "name": "house_number",
+            "title": {
+              "en": "House Number",
+              "nl": "Huisnummer"
+            },
+            "example": {
+              "en": "300",
+              "nl": "252-1"
+            }
+          },
+          {
+            "type": "string",
+            "name": "city",
+            "title": {
+              "en": "City",
+              "nl": "Plaats"
+            },
+            "example": {
+              "en": "London",
+              "nl": "Amsterdam"
+            }
+          },
+          {
+            "type": "string",
+            "name": "zip_code",
+            "title": {
+              "en": "Zip Code",
+              "nl": "Postcode"
+            },
+            "example": {
+              "en": "W1C 1",
+              "nl": "1016 HG"
+            }
+          },
+          {
+            "type": "string",
+            "name": "country",
+            "title": {
+              "en": "Country code",
+              "nl": "Landcode"
+            },
+            "example": {
+              "en": "GB",
+              "nl": "NL"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=position_time"
+            "filter": "driver_id=dog_tracker|cat_tracker"
           }
         ],
-        "id": "position_time_changed"
+        "id": "location_changed"
       },
       {
         "title": {
@@ -917,7 +979,11 @@
                 "en": "Name",
                 "nl": "Naam"
               },
-              "value": "-"
+              "value": "-",
+              "hint": {
+                "en": "The name of product.",
+                "nl": "De naam van het product."
+              }
             },
             {
               "id": "model_name",
@@ -926,7 +992,11 @@
                 "en": "Model",
                 "nl": "Model"
               },
-              "value": "-"
+              "value": "-",
+              "hint": {
+                "en": "The model name of product.",
+                "nl": "Het model van het product."
+              }
             }
           ]
         }
@@ -1044,7 +1114,11 @@
                 "en": "Name",
                 "nl": "Naam"
               },
-              "value": "-"
+              "value": "-",
+              "hint": {
+                "en": "The name of product.",
+                "nl": "De naam van het product."
+              }
             },
             {
               "id": "model_name",
@@ -1053,7 +1127,11 @@
                 "en": "Model",
                 "nl": "Model"
               },
-              "value": "-"
+              "value": "-",
+              "hint": {
+                "en": "The model name of product.",
+                "nl": "Het model van het product."
+              }
             }
           ]
         }
@@ -1225,16 +1303,6 @@
       "setable": false,
       "uiComponent": null,
       "decimals": 6
-    },
-    "position_time": {
-      "type": "number",
-      "title": {
-        "en": "Position Time",
-        "nl": "Positie tijd"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": null
     },
     "speed": {
       "type": "number",

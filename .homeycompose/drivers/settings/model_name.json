@@ -4,5 +4,9 @@
     "en": "Model",
     "nl": "Model"
   },
-  "value": "-"
+  "value": "-",
+  "hint": {
+    "en": "The model name of product.",
+    "nl": "Het model van het product."
+  }
 }

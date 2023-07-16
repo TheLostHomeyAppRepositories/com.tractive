@@ -4,5 +4,9 @@
     "en": "Name",
     "nl": "Naam"
   },
-  "value": "-"
+  "value": "-",
+  "hint": {
+    "en": "The name of product.",
+    "nl": "De naam van het product."
+  }
 }
