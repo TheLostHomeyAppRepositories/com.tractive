@@ -342,8 +342,8 @@
               "nl": "Straat"
             },
             "example": {
-              "en": "Oxford Street",
-              "nl": "Prinsengracht"
+              "en": "oxford street",
+              "nl": "prinsengracht"
             }
           },
           {
@@ -366,8 +366,8 @@
               "nl": "Plaats"
             },
             "example": {
-              "en": "London",
-              "nl": "Amsterdam"
+              "en": "london",
+              "nl": "amsterdam"
             }
           },
           {
