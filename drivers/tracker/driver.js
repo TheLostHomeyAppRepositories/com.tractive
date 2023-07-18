@@ -1,6 +1,6 @@
 'use strict';
 
-const Driver = require('./Driver');
+const Driver = require('../../lib/Driver');
 
 class TrackerDriver extends Driver {
 

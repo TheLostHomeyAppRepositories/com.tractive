@@ -67,7 +67,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=tracker_state"
+      "filter": "driver_id=tracker&capabilities=tracker_state"
     }
   ]
 }

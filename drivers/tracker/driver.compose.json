@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Dog Tracker",
-    "nl": "Hondentracker"
+    "en": "GPS Tracker",
+    "nl": "GPS-tracker"
   },
   "$extends": [
     "defaults"

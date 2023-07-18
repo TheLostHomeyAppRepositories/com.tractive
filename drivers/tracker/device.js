@@ -1,7 +1,6 @@
 'use strict';
 
-const Device = require('./Device');
-const { filled } = require('./Utils');
+const Device = require('../../lib/Device');
 
 class TrackerDevice extends Device {
 

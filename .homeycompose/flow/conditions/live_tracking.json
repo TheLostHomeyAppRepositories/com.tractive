@@ -11,7 +11,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+      "filter": "driver_id=tracker&capabilities=live_tracking"
     }
   ]
 }

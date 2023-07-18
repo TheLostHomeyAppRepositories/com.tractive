@@ -1,9 +1,0 @@
-{
-  "name": {
-    "en": "Cat Tracker",
-    "nl": "Kattentracker"
-  },
-  "$extends": [
-    "defaults"
-  ]
-}

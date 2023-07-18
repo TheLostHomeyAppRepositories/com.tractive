@@ -13,8 +13,8 @@
     "en": "Tractive"
   },
   "description": {
-    "en": "GPS tracker for pets",
-    "nl": "GPS-tracker voor huisdieren"
+    "en": "Follow your pet everywhere",
+    "nl": "Volg je huisdier overal"
   },
   "category": [
     "localization"
@@ -112,7 +112,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+            "filter": "driver_id=tracker&capabilities=buzzer_control"
           }
         ],
         "id": "altitude_changed"
@@ -183,7 +183,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=battery_state"
+            "filter": "driver_id=tracker&capabilities=battery_state"
           }
         ],
         "id": "battery_state_changed"
@@ -205,7 +205,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+            "filter": "driver_id=tracker&capabilities=buzzer_control"
           }
         ],
         "id": "buzzer_control_false"
@@ -227,7 +227,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+            "filter": "driver_id=tracker&capabilities=buzzer_control"
           }
         ],
         "id": "buzzer_control_true"
@@ -249,7 +249,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+            "filter": "driver_id=tracker&capabilities=led_control"
           }
         ],
         "id": "led_control_false"
@@ -271,7 +271,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+            "filter": "driver_id=tracker&capabilities=led_control"
           }
         ],
         "id": "led_control_true"
@@ -293,7 +293,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+            "filter": "driver_id=tracker&capabilities=live_tracking"
           }
         ],
         "id": "live_tracking_false"
@@ -315,7 +315,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+            "filter": "driver_id=tracker&capabilities=live_tracking"
           }
         ],
         "id": "live_tracking_true"
@@ -342,8 +342,8 @@
               "nl": "Straat"
             },
             "example": {
-              "en": "oxford street",
-              "nl": "prinsengracht"
+              "en": "Oxford Street",
+              "nl": "Prinsengracht"
             }
           },
           {
@@ -355,7 +355,7 @@
             },
             "example": {
               "en": "300",
-              "nl": "252-1"
+              "nl": "252"
             }
           },
           {
@@ -366,8 +366,8 @@
               "nl": "Plaats"
             },
             "example": {
-              "en": "london",
-              "nl": "amsterdam"
+              "en": "London",
+              "nl": "Amsterdam"
             }
           },
           {
@@ -399,7 +399,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker"
+            "filter": "driver_id=tracker"
           }
         ],
         "id": "location_changed"
@@ -432,7 +432,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=speed"
+            "filter": "driver_id=tracker&capabilities=speed"
           }
         ],
         "id": "speed_changed"
@@ -510,7 +510,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=tracker_state"
+            "filter": "driver_id=tracker&capabilities=tracker_state"
           }
         ],
         "id": "tracker_state_changed"
@@ -579,7 +579,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=battery_state"
+            "filter": "driver_id=tracker&capabilities=battery_state"
           }
         ],
         "id": "battery_state"
@@ -597,7 +597,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+            "filter": "driver_id=tracker&capabilities=buzzer_control"
           }
         ],
         "id": "buzzer_control"
@@ -615,7 +615,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=charging_state"
+            "filter": "driver_id=tracker&capabilities=charging_state"
           }
         ],
         "id": "charging_state"
@@ -633,7 +633,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+            "filter": "driver_id=tracker&capabilities=led_control"
           }
         ],
         "id": "led_control"
@@ -651,7 +651,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+            "filter": "driver_id=tracker&capabilities=live_tracking"
           }
         ],
         "id": "live_tracking"
@@ -725,7 +725,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=tracker_state"
+            "filter": "driver_id=tracker&capabilities=tracker_state"
           }
         ],
         "id": "tracker_state"
@@ -749,7 +749,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+            "filter": "driver_id=tracker&capabilities=buzzer_control"
           }
         ],
         "id": "buzzer_control_false"
@@ -771,7 +771,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=buzzer_control"
+            "filter": "driver_id=tracker&capabilities=buzzer_control"
           }
         ],
         "id": "buzzer_control_true"
@@ -793,7 +793,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+            "filter": "driver_id=tracker&capabilities=led_control"
           }
         ],
         "id": "led_control_false"
@@ -815,7 +815,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=led_control"
+            "filter": "driver_id=tracker&capabilities=led_control"
           }
         ],
         "id": "led_control_true"
@@ -837,7 +837,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+            "filter": "driver_id=tracker&capabilities=live_tracking"
           }
         ],
         "id": "live_tracking_false"
@@ -859,7 +859,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=dog_tracker|cat_tracker&capabilities=live_tracking"
+            "filter": "driver_id=tracker&capabilities=live_tracking"
           }
         ],
         "id": "live_tracking_true"
@@ -870,9 +870,9 @@
     {
       "class": "other",
       "images": {
-        "small": "/drivers/cat_tracker/assets/images/small.png",
-        "large": "/drivers/cat_tracker/assets/images/large.png",
-        "xlarge": "/drivers/cat_tracker/assets/images/xlarge.png"
+        "small": "/drivers/tracker/assets/images/small.png",
+        "large": "/drivers/tracker/assets/images/large.png",
+        "xlarge": "/drivers/tracker/assets/images/xlarge.png"
       },
       "platforms": [
         "local",
@@ -961,145 +961,10 @@
         }
       ],
       "name": {
-        "en": "Cat Tracker",
-        "nl": "Kattentracker"
+        "en": "GPS Tracker",
+        "nl": "GPS-tracker"
       },
-      "id": "cat_tracker",
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Product"
-          },
-          "children": [
-            {
-              "id": "product_name",
-              "type": "label",
-              "label": {
-                "en": "Name",
-                "nl": "Naam"
-              },
-              "value": "-",
-              "hint": {
-                "en": "The name of product.",
-                "nl": "De naam van het product."
-              }
-            },
-            {
-              "id": "model_name",
-              "type": "label",
-              "label": {
-                "en": "Model",
-                "nl": "Model"
-              },
-              "value": "-",
-              "hint": {
-                "en": "The model name of product.",
-                "nl": "Het model van het product."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "class": "other",
-      "images": {
-        "small": "/drivers/dog_tracker/assets/images/small.png",
-        "large": "/drivers/dog_tracker/assets/images/large.png",
-        "xlarge": "/drivers/dog_tracker/assets/images/xlarge.png"
-      },
-      "platforms": [
-        "local",
-        "cloud"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
-      "capabilities": [
-        "measure_battery",
-        "charging_state",
-        "battery_state",
-        "buzzer_control",
-        "live_tracking",
-        "led_control",
-        "tracker_state",
-        "altitude",
-        "speed",
-        "latitude",
-        "longitude"
-      ],
-      "capabilitiesOptions": {
-        "buzzer_control": {
-          "titleTrue": {
-            "en": "On",
-            "nl": "Aan"
-          },
-          "titleFalse": {
-            "en": "Off",
-            "nl": "Uit"
-          }
-        },
-        "led_control": {
-          "titleTrue": {
-            "en": "On",
-            "nl": "Aan"
-          },
-          "titleFalse": {
-            "en": "Off",
-            "nl": "Uit"
-          }
-        },
-        "live_tracking": {
-          "titleTrue": {
-            "en": "On",
-            "nl": "Aan"
-          },
-          "titleFalse": {
-            "en": "Off",
-            "nl": "Uit"
-          }
-        }
-      },
-      "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
-      },
-      "pair": [
-        {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "../../../assets/logo.png"
-          }
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "repair": [
-        {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "../../../assets/logo.png"
-          }
-        }
-      ],
-      "name": {
-        "en": "Dog Tracker",
-        "nl": "Hondentracker"
-      },
-      "id": "dog_tracker",
+      "id": "tracker",
       "settings": [
         {
           "type": "group",

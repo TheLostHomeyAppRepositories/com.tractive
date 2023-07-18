@@ -20,8 +20,8 @@
         "nl": "Straat"
       },
       "example": {
-        "en": "oxford street",
-        "nl": "prinsengracht"
+        "en": "Oxford Street",
+        "nl": "Prinsengracht"
       }
     },
     {
@@ -33,7 +33,7 @@
       },
       "example": {
         "en": "300",
-        "nl": "252-1"
+        "nl": "252"
       }
     },
     {
@@ -44,8 +44,8 @@
         "nl": "Plaats"
       },
       "example": {
-        "en": "london",
-        "nl": "amsterdam"
+        "en": "London",
+        "nl": "Amsterdam"
       }
     },
     {
@@ -77,7 +77,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=dog_tracker|cat_tracker"
+      "filter": "driver_id=tracker"
     }
   ]
 }
