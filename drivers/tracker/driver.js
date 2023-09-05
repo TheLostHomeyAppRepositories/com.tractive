@@ -12,7 +12,7 @@ class TrackerDriver extends Driver {
   async onOAuth2Init() {
     this.locationTrigger = this.homey.flow.getDeviceTriggerCard('location_changed');
 
-    super.onOAuth2Init().catch(this.error);
+    await super.onOAuth2Init();
   }
 
   /*

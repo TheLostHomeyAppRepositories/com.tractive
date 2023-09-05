@@ -11,18 +11,20 @@ class TrackerDevice extends Device {
   // Device deleted
   async onOAuth2Deleted() {
     // Unregister event listener
-    this.homey.off('tracker_status', this.onMessage);
+    this.homey.off('update', this.onMessage);
 
-    super.onOAuth2Deleted().catch(this.error);
+    await super.onOAuth2Deleted();
   }
 
   // Device initialized
   async onOAuth2Init() {
+    this.keepAlive = Math.floor(Date.now() / 1000);
+
     // Register event listener
-    this.homey.on('tracker_status', this.onMessage.bind(this));
+    this.homey.on('update', this.onMessage.bind(this));
 
     // Initiate device
-    super.onOAuth2Init().catch(this.error);
+    await super.onOAuth2Init();
   }
 
   /*
@@ -124,9 +126,19 @@ class TrackerDevice extends Device {
 
   // Stream message received
   async onMessage(data) {
-    if (data.tracker_id !== this.getData().id) return;
+    // Keep alive message
+    if (data.message === 'keep-alive') {
+      this.keepAlive = data.keepAlive;
 
-    this.handleSyncData(data).catch(this.error);
+      return;
+    }
+
+    // Tracker status message
+    if (data.message === 'tracker_status') {
+      if (data.tracker_id !== this.getData().id) return;
+
+      this.handleSyncData(data).catch(this.error);
+    }
   }
 
   // Set warning message
