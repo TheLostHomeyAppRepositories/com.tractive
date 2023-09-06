@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Power Saving Zone was entered",
+    "nl": "Wifi-zone werd binnengegaan"
+  },
+  "hint": {
+    "en": "This flowcard triggers when the Power Saving Zone was entered.",
+    "nl": "Deze kaart wordt geactiveerd wanneer wifi-zone binnengegaan werd."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=tracker&capabilities=power_saving_zone"
+    }
+  ]
+}

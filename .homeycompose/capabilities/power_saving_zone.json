@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Power Saving Zone",
+    "nl": "Wifi-zone"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/power_saving_zone.svg",
+  "insightsTitleTrue": {
+    "en": "Entered Power Saving Zone",
+    "nl": "Wifi-zone binnengegaan"
+  },
+  "insightsTitleFalse": {
+    "en": "Left Power Saving Zone",
+    "nl": "Wifi-zone verlaten"
+  }
+}

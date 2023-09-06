@@ -406,6 +406,50 @@
       },
       {
         "title": {
+          "en": "Power Saving Zone was left",
+          "nl": "Wifi-zone werd verlaten"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the Power Saving Zone was left.",
+          "nl": "Deze kaart wordt geactiveerd wanneer wifi-zone verlaten werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=power_saving_zone"
+          }
+        ],
+        "id": "power_saving_zone_false"
+      },
+      {
+        "title": {
+          "en": "Power Saving Zone was entered",
+          "nl": "Wifi-zone werd binnengegaan"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the Power Saving Zone was entered.",
+          "nl": "Deze kaart wordt geactiveerd wanneer wifi-zone binnengegaan werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=power_saving_zone"
+          }
+        ],
+        "id": "power_saving_zone_true"
+      },
+      {
+        "title": {
           "en": "Speed has changed",
           "nl": "Snelheid is veranderd"
         },
@@ -658,6 +702,24 @@
       },
       {
         "title": {
+          "en": "Is !{{inside|outside}} Power Saving Zone",
+          "nl": "Is !{{binnen|buiten}} wifi-zone"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=power_saving_zone"
+          }
+        ],
+        "id": "power_saving_zone"
+      },
+      {
+        "title": {
           "en": "Tracker state !{{is|is not}}",
           "nl": "Trackerstatus !{{is|is niet}}"
         },
@@ -702,7 +764,7 @@
               {
                 "id": "no_position",
                 "title": {
-                  "en": "no Location",
+                  "en": "no location",
                   "nl": "geen locatie"
                 }
               },
@@ -716,7 +778,7 @@
               {
                 "id": "shutdown_by_user",
                 "title": {
-                  "en": "turned Off",
+                  "en": "turned off",
                   "nl": "uitgeschakeld"
                 }
               }
@@ -885,6 +947,7 @@
         "measure_battery",
         "charging_state",
         "battery_state",
+        "power_saving_zone",
         "buzzer_control",
         "live_tracking",
         "led_control",
@@ -1168,6 +1231,26 @@
       "setable": false,
       "uiComponent": null,
       "decimals": 6
+    },
+    "power_saving_zone": {
+      "type": "boolean",
+      "title": {
+        "en": "Power Saving Zone",
+        "nl": "Wifi-zone"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/power_saving_zone.svg",
+      "insightsTitleTrue": {
+        "en": "Entered Power Saving Zone",
+        "nl": "Wifi-zone binnengegaan"
+      },
+      "insightsTitleFalse": {
+        "en": "Left Power Saving Zone",
+        "nl": "Wifi-zone verlaten"
+      }
     },
     "speed": {
       "type": "number",

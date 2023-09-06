@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Is !{{inside|outside}} Power Saving Zone",
+    "nl": "Is !{{binnen|buiten}} wifi-zone"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=tracker&capabilities=power_saving_zone"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 'use strict';
 
 const Device = require('../../lib/Device');
+const { filled } = require('../../lib/Utils');
 
 class TrackerDevice extends Device {
 
@@ -101,6 +102,13 @@ class TrackerDevice extends Device {
     // LIVE Tracking
     if ('live_tracking' in msg) {
       data.live_tracking = msg.live_tracking.active;
+    }
+
+    // Power Saving Zone
+    data.power_saving_zone = false;
+
+    if ('power_saving_zone_id' in msg) {
+      data.power_saving_zone = filled(msg.power_saving_zone_id);
     }
 
     // Tracker state

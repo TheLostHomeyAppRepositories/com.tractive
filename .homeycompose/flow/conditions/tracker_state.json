@@ -44,7 +44,7 @@
         {
           "id": "no_position",
           "title": {
-            "en": "no Location",
+            "en": "no location",
             "nl": "geen locatie"
           }
         },
@@ -58,7 +58,7 @@
         {
           "id": "shutdown_by_user",
           "title": {
-            "en": "turned Off",
+            "en": "turned off",
             "nl": "uitgeschakeld"
           }
         }

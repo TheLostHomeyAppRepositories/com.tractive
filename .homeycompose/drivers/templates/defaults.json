@@ -16,6 +16,7 @@
     "measure_battery",
     "charging_state",
     "battery_state",
+    "power_saving_zone",
     "buzzer_control",
     "live_tracking",
     "led_control",

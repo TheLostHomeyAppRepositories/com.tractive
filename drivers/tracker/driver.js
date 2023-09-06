@@ -34,6 +34,7 @@ class TrackerDriver extends Driver {
     ];
 
     for (const name of device.capabilities) {
+      if (name === 'WIFI_ZONE') caps.push('power_saving_zone');
       if (name === 'BUZZER') caps.push('buzzer_control');
       if (name === 'LED') caps.push('led_control');
       if (name === 'LT') caps.push('live_tracking');
