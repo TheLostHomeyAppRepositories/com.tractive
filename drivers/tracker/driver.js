@@ -1,6 +1,7 @@
 'use strict';
 
 const Driver = require('../../lib/Driver');
+const { TrackerCapabilities } = require('../../lib/Enums');
 
 class TrackerDriver extends Driver {
 
@@ -33,11 +34,10 @@ class TrackerDriver extends Driver {
       'battery_state',
     ];
 
-    for (const name of device.capabilities) {
-      if (name === 'WIFI_ZONE') caps.push('power_saving_zone');
-      if (name === 'BUZZER') caps.push('buzzer_control');
-      if (name === 'LED') caps.push('led_control');
-      if (name === 'LT') caps.push('live_tracking');
+    for (const [name, capability] of Object.entries(TrackerCapabilities)) {
+      if (device.capabilities.includes(name)) {
+        caps.push(capability);
+      }
     }
 
     caps.push('altitude', 'speed', 'latitude', 'longitude');

@@ -1,7 +1,8 @@
 'use strict';
 
+const { TrackerCapabilities, TrackerNamesBySku, TrackerNames } = require('../../lib/Enums');
 const Device = require('../../lib/Device');
-const { filled } = require('../../lib/Utils');
+const { filled, blank } = require('../../lib/Utils');
 
 class TrackerDevice extends Device {
 
@@ -9,20 +10,10 @@ class TrackerDevice extends Device {
   | Device events
   */
 
-  // Device deleted
-  async onOAuth2Deleted() {
-    // Unregister event listener
-    this.homey.off('update', this.onMessage);
-
-    await super.onOAuth2Deleted();
-  }
-
   // Device initialized
   async onOAuth2Init() {
-    this.keepAlive = Math.floor(Date.now() / 1000);
-
-    // Register event listener
-    this.homey.on('update', this.onMessage.bind(this));
+    // Synchronize
+    await this.sync();
 
     // Initiate device
     await super.onOAuth2Init();
@@ -33,12 +24,12 @@ class TrackerDevice extends Device {
   */
 
   // Return parsed channel data
-  async parseChannelData(msg) {
+  async parseChannelData(raw) {
     const data = {};
 
     // Position
-    if ('position' in msg) {
-      const { position } = msg;
+    if ('position' in raw) {
+      const { position } = raw;
 
       // Altitude (m)
       if ('altitude' in position) {
@@ -71,23 +62,23 @@ class TrackerDevice extends Device {
     }
 
     // Battery state
-    if ('battery_state' in msg) {
-      data.battery_state = msg.battery_state.toLowerCase();
+    if ('battery_state' in raw) {
+      data.battery_state = raw.battery_state.toLowerCase();
     }
 
     // Buzzer control
-    if ('buzzer_control' in msg) {
-      data.buzzer_control = msg.buzzer_control.active;
+    if ('buzzer_control' in raw) {
+      data.buzzer_control = raw.buzzer_control.active;
     }
 
     // Charging state
-    if ('charging_state' in msg) {
-      data.charging_state = msg.charging_state === 'CHARGING';
+    if ('charging_state' in raw) {
+      data.charging_state = raw.charging_state === 'CHARGING';
     }
 
     // Hardware
-    if ('hardware' in msg) {
-      const { hardware } = msg;
+    if ('hardware' in raw) {
+      const { hardware } = raw;
 
       if ('battery_level' in hardware) {
         data.measure_battery = Number(hardware.battery_level);
@@ -95,30 +86,30 @@ class TrackerDevice extends Device {
     }
 
     // LED control
-    if ('led_control' in msg) {
-      data.led_control = msg.led_control.active;
+    if ('led_control' in raw) {
+      data.led_control = raw.led_control.active;
     }
 
     // LIVE Tracking
-    if ('live_tracking' in msg) {
-      data.live_tracking = msg.live_tracking.active;
+    if ('live_tracking' in raw) {
+      data.live_tracking = raw.live_tracking.active;
     }
 
     // Power Saving Zone
     data.power_saving_zone = false;
 
-    if ('power_saving_zone_id' in msg) {
-      data.power_saving_zone = filled(msg.power_saving_zone_id);
+    if ('power_saving_zone_id' in raw) {
+      data.power_saving_zone = filled(raw.power_saving_zone_id);
     }
 
     // Tracker state
-    if ('tracker_state' in msg) {
-      data.tracker_state = msg.tracker_state.toLowerCase();
+    if ('tracker_state' in raw) {
+      data.tracker_state = raw.tracker_state.toLowerCase();
     }
 
     // Tracker state reason
-    if ('tracker_state_reason' in msg) {
-      const reason = msg.tracker_state_reason.toLowerCase();
+    if ('tracker_state_reason' in raw) {
+      const reason = raw.tracker_state_reason.toLowerCase();
 
       if (reason === 'power_saving') {
         data.tracker_state = 'power_saving';
@@ -127,13 +118,63 @@ class TrackerDevice extends Device {
       data.tracker_state_reason = reason;
     }
 
-    msg = null;
+    raw = null;
+
+    return data;
+  }
+
+  // Return parsed sync data
+  async parseSyncData(raw) {
+    const data = {};
+
+    // Model and product
+    if ('model_number' in raw) {
+      data.model_name = raw.hw_edition ? `${raw.model_number}_${raw.hw_edition}` : raw.model_number;
+      data.product_name = (raw.sku ? TrackerNamesBySku[raw.sku] : TrackerNames[data.model_name]) || '-';
+    }
+
+    // Battery state
+    if ('battery_state' in raw) {
+      data.battery_state = raw.battery_state.toLowerCase();
+    }
+
+    // Charging state
+    if ('charging_state' in raw) {
+      data.charging_state = raw.charging_state === 'CHARGING';
+    }
+
+    // Power Saving Zone
+    data.power_saving_zone = false;
+
+    if ('power_saving_zone_id' in raw) {
+      data.power_saving_zone = filled(raw.power_saving_zone_id);
+    }
+
+    // Tracker state
+    if ('state' in raw) {
+      data.tracker_state = raw.state.toLowerCase();
+    }
+
+    // Tracker state reason
+    if ('state_reason' in raw) {
+      const reason = raw.state_reason.toLowerCase();
+
+      if (reason === 'power_saving') {
+        data.tracker_state = 'power_saving';
+      }
+
+      data.tracker_state_reason = reason;
+    }
+
+    raw = null;
 
     return data;
   }
 
   // Stream message received
   async onMessage(data) {
+    if (blank(data)) return;
+
     // Keep alive message
     if (data.message === 'keep-alive') {
       this.keepAlive = data.keepAlive;
@@ -145,7 +186,42 @@ class TrackerDevice extends Device {
     if (data.message === 'tracker_status') {
       if (data.tracker_id !== this.getData().id) return;
 
-      this.handleSyncData(data).catch(this.error);
+      let parsed;
+
+      // Parse channel data
+      parsed = await this.parseChannelData(data);
+
+      // Handle parsed message
+      await this.handleSyncData(parsed);
+
+      parsed = null;
+    }
+  }
+
+  // Synchronize
+  async sync() {
+    let tracker;
+    let parsed;
+
+    try {
+      const { id } = this.getData();
+
+      // Get tracker data from API
+      tracker = await this.oAuth2Client.getTracker(id);
+
+      // Sync capabilities with tracker data
+      await this.syncCapabilities(tracker);
+
+      // Parse sync data
+      parsed = await this.parseSyncData(tracker);
+
+      // Handle parsed message
+      await this.handleSyncData(parsed);
+    } catch (err) {
+      this.error('[Sync]', err.message);
+    } finally {
+      tracker = null;
+      parsed = null;
     }
   }
 
@@ -186,6 +262,29 @@ class TrackerDevice extends Device {
 
   async setLive(enabled) {
     return this.oAuth2Client.setLive(this.getData().id, enabled);
+  }
+
+  /*
+  | Support functions
+  */
+
+  // Synchronize capabilites
+  async syncCapabilities(data) {
+    for (const [name, capability] of Object.entries(TrackerCapabilities)) {
+      // Add missing capabilities
+      if (data.capabilities.includes(name) && !this.hasCapability(capability)) {
+        this.addCapability(capability).catch(this.error);
+        this.log(`Added '${capability}' capability`);
+
+        continue;
+      }
+
+      // Remove capabilities
+      if (!data.capabilities.includes(name) && this.hasCapability(capability)) {
+        this.removeCapability(capability).catch(this.error);
+        this.log(`Removed '${capability}' capability`);
+      }
+    }
   }
 
 }
