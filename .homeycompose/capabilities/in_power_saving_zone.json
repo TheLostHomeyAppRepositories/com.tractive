@@ -8,7 +8,7 @@
   "setable": false,
   "insights": true,
   "uiComponent": "sensor",
-  "icon": "/assets/capabilities/power_saving_zone.svg",
+  "icon": "/assets/capabilities/in_power_saving_zone.svg",
   "insightsTitleTrue": {
     "en": "Entered Power Saving Zone",
     "nl": "Wifi-zone binnengegaan"
