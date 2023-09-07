@@ -17,5 +17,6 @@
       "name": "device",
       "filter": "driver_id=tracker&capabilities=in_power_saving_zone"
     }
-  ]
+  ],
+  "highlight": true
 }

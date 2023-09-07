@@ -252,6 +252,7 @@
             "filter": "driver_id=tracker&capabilities=in_power_saving_zone"
           }
         ],
+        "highlight": true,
         "id": "in_power_saving_zone_false"
       },
       {
@@ -288,6 +289,7 @@
             "filter": "driver_id=tracker&capabilities=in_power_saving_zone"
           }
         ],
+        "highlight": true,
         "id": "in_power_saving_zone_true"
       },
       {
@@ -461,6 +463,44 @@
           }
         ],
         "id": "location_changed"
+      },
+      {
+        "title": {
+          "en": "Power Saving Zone has changed",
+          "nl": "Wifi-zone is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Power Saving Zone has changed to [[power_saving_zone]]",
+          "nl": "Wifi-zone is veranderd naar [[power_saving_zone]]"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the Power Saving Zone has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de wifi-zone veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "autocomplete",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "name": "power_saving_zone",
+            "placeholder": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=power_saving_zone"
+          }
+        ],
+        "id": "power_saving_zone_changed"
       },
       {
         "title": {
