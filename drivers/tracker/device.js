@@ -101,11 +101,11 @@ class TrackerDevice extends Device {
       data.speed = Number(position.speed || 0);
     }
 
-    // Power Saving Zone
-    data.power_saving_zone = false;
+    // In Power Saving Zone
+    data.in_power_saving_zone = false;
 
     if ('power_saving_zone_id' in raw) {
-      data.power_saving_zone = filled(raw.power_saving_zone_id);
+      data.in_power_saving_zone = filled(raw.power_saving_zone_id);
     }
 
     // Tracker state

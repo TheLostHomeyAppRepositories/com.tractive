@@ -11,7 +11,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=tracker&capabilities=power_saving_zone"
+      "filter": "driver_id=tracker&capabilities=in_power_saving_zone"
     }
   ]
 }
