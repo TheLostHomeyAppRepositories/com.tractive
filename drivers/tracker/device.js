@@ -23,43 +23,9 @@ class TrackerDevice extends Device {
   | Synchronization functions
   */
 
-  // Return parsed channel data
-  async parseChannelData(raw) {
+  // Return parsed data
+  async parseData(raw) {
     const data = {};
-
-    // Position
-    if ('position' in raw) {
-      const { position } = raw;
-
-      // Altitude (m)
-      if ('altitude' in position) {
-        data.altitude = Number(position.altitude);
-      }
-
-      // Latitude / longitude
-      if ('latlong' in position) {
-        const lat = this.getCapabilityValue('latitude');
-        const long = this.getCapabilityValue('longitude');
-
-        data.latitude = Number(position.latlong[0]);
-        data.longitude = Number(position.latlong[1]);
-
-        if (lat !== data.latitude || long !== data.longitude) {
-          const address = await this.oAuth2Client.getAddress(data.latitude, data.longitude);
-
-          data.address = {
-            house_number: (address.house_number || '').toLowerCase(),
-            zip_code: (address.zip_code || '').toUpperCase(),
-            country: (address.country || '').toUpperCase(),
-            street: (address.street || '').toLowerCase(),
-            city: (address.city || '').toLowerCase(),
-          };
-        }
-      }
-
-      // Speed (m/s)
-      data.speed = Number(position.speed || 0);
-    }
 
     // Battery state
     if ('battery_state' in raw) {
@@ -95,52 +61,44 @@ class TrackerDevice extends Device {
       data.live_tracking = raw.live_tracking.active;
     }
 
-    // Power Saving Zone
-    data.power_saving_zone = false;
-
-    if ('power_saving_zone_id' in raw) {
-      data.power_saving_zone = filled(raw.power_saving_zone_id);
-    }
-
-    // Tracker state
-    if ('tracker_state' in raw) {
-      data.tracker_state = raw.tracker_state.toLowerCase();
-    }
-
-    // Tracker state reason
-    if ('tracker_state_reason' in raw) {
-      const reason = raw.tracker_state_reason.toLowerCase();
-
-      if (reason === 'power_saving') {
-        data.tracker_state = 'power_saving';
-      }
-
-      data.tracker_state_reason = reason;
-    }
-
-    raw = null;
-
-    return data;
-  }
-
-  // Return parsed sync data
-  async parseSyncData(raw) {
-    const data = {};
-
     // Model and product
     if ('model_number' in raw) {
       data.model_name = raw.hw_edition ? `${raw.model_number}_${raw.hw_edition}` : raw.model_number;
       data.product_name = (raw.sku ? TrackerNamesBySku[raw.sku] : TrackerNames[data.model_name]) || '-';
     }
 
-    // Battery state
-    if ('battery_state' in raw) {
-      data.battery_state = raw.battery_state.toLowerCase();
-    }
+    // Position
+    if ('position' in raw) {
+      const { position } = raw;
 
-    // Charging state
-    if ('charging_state' in raw) {
-      data.charging_state = raw.charging_state === 'CHARGING';
+      // Altitude (m)
+      if ('altitude' in position) {
+        data.altitude = Number(position.altitude);
+      }
+
+      // Latitude / longitude
+      if ('latlong' in position) {
+        const lat = this.getCapabilityValue('latitude');
+        const long = this.getCapabilityValue('longitude');
+
+        data.latitude = Number(position.latlong[0]);
+        data.longitude = Number(position.latlong[1]);
+
+        if (lat !== data.latitude || long !== data.longitude) {
+          const address = await this.oAuth2Client.getAddress(data.latitude, data.longitude);
+
+          data.address = {
+            house_number: (address.house_number || '').toLowerCase(),
+            zip_code: (address.zip_code || '').toUpperCase(),
+            country: (address.country || '').toUpperCase(),
+            street: (address.street || '').toLowerCase(),
+            city: (address.city || '').toLowerCase(),
+          };
+        }
+      }
+
+      // Speed (m/s)
+      data.speed = Number(position.speed || 0);
     }
 
     // Power Saving Zone
@@ -151,13 +109,17 @@ class TrackerDevice extends Device {
     }
 
     // Tracker state
-    if ('state' in raw) {
-      data.tracker_state = raw.state.toLowerCase();
+    const state = raw.tracker_state || raw.state || null;
+
+    if (filled(state)) {
+      data.tracker_state = state.toLowerCase();
     }
 
     // Tracker state reason
-    if ('state_reason' in raw) {
-      const reason = raw.state_reason.toLowerCase();
+    const stateReason = raw.tracker_state_reason || raw.state_reason || null;
+
+    if (filled(stateReason)) {
+      const reason = stateReason.toLowerCase();
 
       if (reason === 'power_saving') {
         data.tracker_state = 'power_saving';
@@ -186,42 +148,52 @@ class TrackerDevice extends Device {
     if (data.message === 'tracker_status') {
       if (data.tracker_id !== this.getData().id) return;
 
-      let parsed;
+      this.log('[Stream] Received:', JSON.stringify(data));
 
-      // Parse channel data
-      parsed = await this.parseChannelData(data);
-
-      // Handle parsed message
-      await this.handleSyncData(parsed);
-
-      parsed = null;
+      // Handle message
+      this.handleSyncData(data).catch(this.error);
     }
   }
 
   // Synchronize
   async sync() {
-    let tracker;
-    let parsed;
+    let data;
 
     try {
       const { id } = this.getData();
 
       // Get tracker data from API
-      tracker = await this.oAuth2Client.getTracker(id);
+      data = await this.oAuth2Client.getTracker(id);
 
-      // Sync capabilities with tracker data
-      await this.syncCapabilities(tracker);
+      this.log('[Sync] Received:', JSON.stringify(data));
 
-      // Parse sync data
-      parsed = await this.parseSyncData(tracker);
-
-      // Handle parsed message
-      await this.handleSyncData(parsed);
+      // Handle data
+      await this.handleSyncData(data);
     } catch (err) {
       this.error('[Sync]', err.message);
     } finally {
-      tracker = null;
-      parsed = null;
+      data = null;
+    }
+  }
+
+  // Synchronize capabilites
+  async syncCapabilities(data) {
+    if (blank(data.capabilities)) return;
+
+    for (const [name, capability] of Object.entries(TrackerCapabilities)) {
+      // Add missing capabilities
+      if (data.capabilities.includes(name) && !this.hasCapability(capability)) {
+        this.addCapability(capability).catch(this.error);
+        this.log(`Added '${capability}' capability`);
+
+        continue;
+      }
+
+      // Remove capabilities
+      if (!data.capabilities.includes(name) && this.hasCapability(capability)) {
+        this.removeCapability(capability).catch(this.error);
+        this.log(`Removed '${capability}' capability`);
+      }
     }
   }
 
@@ -262,29 +234,6 @@ class TrackerDevice extends Device {
 
   async setLive(enabled) {
     return this.oAuth2Client.setLive(this.getData().id, enabled);
-  }
-
-  /*
-  | Support functions
-  */
-
-  // Synchronize capabilites
-  async syncCapabilities(data) {
-    for (const [name, capability] of Object.entries(TrackerCapabilities)) {
-      // Add missing capabilities
-      if (data.capabilities.includes(name) && !this.hasCapability(capability)) {
-        this.addCapability(capability).catch(this.error);
-        this.log(`Added '${capability}' capability`);
-
-        continue;
-      }
-
-      // Remove capabilities
-      if (!data.capabilities.includes(name) && this.hasCapability(capability)) {
-        this.removeCapability(capability).catch(this.error);
-        this.log(`Removed '${capability}' capability`);
-      }
-    }
   }
 
 }
