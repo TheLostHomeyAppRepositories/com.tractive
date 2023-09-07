@@ -734,6 +734,40 @@
       },
       {
         "title": {
+          "en": "Power Saving Zone !{{is|is not}}",
+          "nl": "Wifi-zone !{{is|is niet}}"
+        },
+        "titleFormatted": {
+          "en": "Power Saving Zone !{{is|is not}} equal to [[power_saving_zone]]",
+          "nl": "Wifi-zone !{{is|is niet}} gelijk aan [[power_saving_zone]]"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "autocomplete",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "name": "power_saving_zone",
+            "placeholder": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=power_saving_zone"
+          }
+        ],
+        "id": "power_saving_zone"
+      },
+      {
+        "title": {
           "en": "Tracker state !{{is|is not}}",
           "nl": "Trackerstatus !{{is|is niet}}"
         },

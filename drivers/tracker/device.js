@@ -37,6 +37,11 @@ class TrackerDevice extends Device {
       data.battery_state = raw.battery_state.toLowerCase();
     }
 
+    // Capabilities
+    if ('capabilities' in raw) {
+      data.capabilities = raw.capabilities;
+    }
+
     // Buzzer control
     if ('buzzer_control' in raw) {
       data.buzzer_control = raw.buzzer_control.active;
@@ -234,7 +239,7 @@ class TrackerDevice extends Device {
     // Get Power Saving Zone from API
     const zone = await this.oAuth2Client.getPowerSavingZone(id);
 
-    return zone.name || '-';
+    return (zone.name || '-').trim();
   }
 
   // Save Power Saving Zones in store
@@ -244,7 +249,9 @@ class TrackerDevice extends Device {
     let zones = {};
 
     for (const zone of raw) {
-      zones[zone._id] = zone.name;
+      if (blank(zone.name)) continue;
+
+      zones[zone._id] = zone.name.trim();
     }
 
     await this.setStoreValue('power_saving_zones', zones);
