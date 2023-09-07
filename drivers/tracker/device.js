@@ -27,6 +27,11 @@ class TrackerDevice extends Device {
   async parseData(raw) {
     const data = {};
 
+    // Power Saving Zones (first for lookup later)
+    if ('power_saving_zones' in raw) {
+      data.power_saving_zones = await this.savePowerSavingZones(raw.power_saving_zones);
+    }
+
     // Battery state
     if ('battery_state' in raw) {
       data.battery_state = raw.battery_state.toLowerCase();
@@ -102,7 +107,7 @@ class TrackerDevice extends Device {
     }
 
     // Power Saving Zone
-    data.power_saving_zone = await this.getPowerSavingZoneName(raw.power_saving_zone_id || null);
+    data.power_saving_zone = await this.getPowerSavingZoneName(raw.power_saving_zone_id);
     data.in_power_saving_zone = filled(raw.power_saving_zone_id || null);
 
     // Tracker state
@@ -212,16 +217,44 @@ class TrackerDevice extends Device {
   }
 
   /*
-  | Device actions
+  | Power Saving Zone functions
   */
 
+  // Return Power Saving Zone name
   async getPowerSavingZoneName(id) {
     if (blank(id)) return '-';
 
+    // Check store first
+    const zones = this.getStoreValue('power_saving_zones') || {};
+
+    if (filled(zones[id])) {
+      return zones[id];
+    }
+
+    // Get Power Saving Zone from API
     const zone = await this.oAuth2Client.getPowerSavingZone(id);
 
     return zone.name || '-';
   }
+
+  // Save Power Saving Zones in store
+  async savePowerSavingZones(raw) {
+    if (blank(raw)) return;
+
+    let zones = {};
+
+    for (const zone of raw) {
+      zones[zone._id] = zone.name;
+    }
+
+    await this.setStoreValue('power_saving_zones', zones);
+
+    zones = null;
+  }
+
+  /*
+  | Device actions
+  */
 
   async setBuzzer(enabled) {
     if (enabled && this.getCapabilityValue('tracker_state') === 'power_saving') {
