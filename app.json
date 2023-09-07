@@ -267,6 +267,20 @@
           "local",
           "cloud"
         ],
+        "tokens": [
+          {
+            "type": "string",
+            "name": "power_saving_zone",
+            "title": {
+              "en": "Power Saving Zone",
+              "nl": "Wifi-zone"
+            },
+            "example": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -948,6 +962,7 @@
         "charging_state",
         "battery_state",
         "in_power_saving_zone",
+        "power_saving_zone",
         "live_tracking",
         "buzzer_control",
         "led_control",
@@ -1178,7 +1193,7 @@
         "nl": "In Wifi-zone"
       },
       "getable": true,
-      "setable": true,
+      "setable": false,
       "insights": true,
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/power_saving_zone.svg",
@@ -1251,6 +1266,16 @@
       "setable": false,
       "uiComponent": null,
       "decimals": 6
+    },
+    "power_saving_zone": {
+      "type": "string",
+      "title": {
+        "en": "Power Saving Zone",
+        "nl": "Wifi-zone"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null
     },
     "speed": {
       "type": "number",

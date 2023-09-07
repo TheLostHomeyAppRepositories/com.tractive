@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Power Saving Zone",
+    "nl": "Wifi-zone"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": null
+}

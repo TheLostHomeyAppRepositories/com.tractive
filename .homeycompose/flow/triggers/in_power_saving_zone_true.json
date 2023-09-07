@@ -11,6 +11,20 @@
     "local",
     "cloud"
   ],
+  "tokens": [
+    {
+      "type": "string",
+      "name": "power_saving_zone",
+      "title": {
+        "en": "Power Saving Zone",
+        "nl": "Wifi-zone"
+      },
+      "example": {
+        "en": "Home",
+        "nl": "Thuis"
+      }
+    }
+  ],
   "args": [
     {
       "type": "device",

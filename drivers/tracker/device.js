@@ -101,12 +101,9 @@ class TrackerDevice extends Device {
       data.speed = Number(position.speed || 0);
     }
 
-    // In Power Saving Zone
-    data.in_power_saving_zone = false;
-
-    if ('power_saving_zone_id' in raw) {
-      data.in_power_saving_zone = filled(raw.power_saving_zone_id);
-    }
+    // Power Saving Zone
+    data.power_saving_zone = await this.getPowerSavingZoneName(raw.power_saving_zone_id || null);
+    data.in_power_saving_zone = filled(raw.power_saving_zone_id || null);
 
     // Tracker state
     const state = raw.tracker_state || raw.state || null;
@@ -180,19 +177,21 @@ class TrackerDevice extends Device {
   async syncCapabilities(data) {
     if (blank(data.capabilities)) return;
 
-    for (const [name, capability] of Object.entries(TrackerCapabilities)) {
-      // Add missing capabilities
-      if (data.capabilities.includes(name) && !this.hasCapability(capability)) {
-        this.addCapability(capability).catch(this.error);
-        this.log(`Added '${capability}' capability`);
+    for (const [name, capabilities] of Object.entries(TrackerCapabilities)) {
+      for (const capability of capabilities) {
+        // Add missing capabilities
+        if (data.capabilities.includes(name) && !this.hasCapability(capability)) {
+          this.addCapability(capability).catch(this.error);
+          this.log(`Added '${capability}' capability`);
 
-        continue;
-      }
+          continue;
+        }
 
-      // Remove capabilities
-      if (!data.capabilities.includes(name) && this.hasCapability(capability)) {
-        this.removeCapability(capability).catch(this.error);
-        this.log(`Removed '${capability}' capability`);
+        // Remove capabilities
+        if (!data.capabilities.includes(name) && this.hasCapability(capability)) {
+          this.removeCapability(capability).catch(this.error);
+          this.log(`Removed '${capability}' capability`);
+        }
       }
     }
   }
@@ -215,6 +214,14 @@ class TrackerDevice extends Device {
   /*
   | Device actions
   */
+
+  async getPowerSavingZoneName(id) {
+    if (blank(id)) return '-';
+
+    const zone = await this.oAuth2Client.getPowerSavingZone(id);
+
+    return zone.name || '-';
+  }
 
   async setBuzzer(enabled) {
     if (enabled && this.getCapabilityValue('tracker_state') === 'power_saving') {

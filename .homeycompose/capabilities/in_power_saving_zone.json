@@ -5,7 +5,7 @@
     "nl": "In Wifi-zone"
   },
   "getable": true,
-  "setable": true,
+  "setable": false,
   "insights": true,
   "uiComponent": "sensor",
   "icon": "/assets/capabilities/power_saving_zone.svg",
