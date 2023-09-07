@@ -1,11 +1,11 @@
 {
   "title": {
     "en": "Power Saving Zone !{{is|is not}}",
-    "nl": "Wifi-zone !{{is|is niet}}"
+    "nl": "WiFi-zone !{{is|is niet}}"
   },
   "titleFormatted": {
     "en": "Power Saving Zone !{{is|is not}} equal to [[power_saving_zone]]",
-    "nl": "Wifi-zone !{{is|is niet}} gelijk aan [[power_saving_zone]]"
+    "nl": "WiFi-zone !{{is|is niet}} gelijk aan [[power_saving_zone]]"
   },
   "platforms": [
     "local",

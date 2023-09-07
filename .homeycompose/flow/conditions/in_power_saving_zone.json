@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Is !{{inside|outside}} Power Saving Zone",
-    "nl": "Is !{{binnen|buiten}} wifi-zone"
+    "nl": "Is !{{binnen|buiten}} WiFi-zone"
   },
   "platforms": [
     "local",

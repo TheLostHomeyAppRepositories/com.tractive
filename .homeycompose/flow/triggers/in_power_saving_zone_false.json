@@ -1,11 +1,11 @@
 {
   "title": {
     "en": "Power Saving Zone was left",
-    "nl": "Wifi-zone werd verlaten"
+    "nl": "WiFi-zone werd verlaten"
   },
   "hint": {
     "en": "This flowcard triggers when the Power Saving Zone was left.",
-    "nl": "Deze kaart wordt geactiveerd wanneer wifi-zone verlaten werd."
+    "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone verlaten werd."
   },
   "platforms": [
     "local",

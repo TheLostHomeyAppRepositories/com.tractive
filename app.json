@@ -235,11 +235,11 @@
       {
         "title": {
           "en": "Power Saving Zone was left",
-          "nl": "Wifi-zone werd verlaten"
+          "nl": "WiFi-zone werd verlaten"
         },
         "hint": {
           "en": "This flowcard triggers when the Power Saving Zone was left.",
-          "nl": "Deze kaart wordt geactiveerd wanneer wifi-zone verlaten werd."
+          "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone verlaten werd."
         },
         "platforms": [
           "local",
@@ -258,11 +258,11 @@
       {
         "title": {
           "en": "Power Saving Zone was entered",
-          "nl": "Wifi-zone werd binnengegaan"
+          "nl": "WiFi-zone werd binnengegaan"
         },
         "hint": {
           "en": "This flowcard triggers when the Power Saving Zone was entered.",
-          "nl": "Deze kaart wordt geactiveerd wanneer wifi-zone binnengegaan werd."
+          "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone binnengegaan werd."
         },
         "platforms": [
           "local",
@@ -274,7 +274,7 @@
             "name": "power_saving_zone",
             "title": {
               "en": "Power Saving Zone",
-              "nl": "Wifi-zone"
+              "nl": "WiFi-zone"
             },
             "example": {
               "en": "Home",
@@ -467,15 +467,15 @@
       {
         "title": {
           "en": "Power Saving Zone has changed",
-          "nl": "Wifi-zone is veranderd"
+          "nl": "WiFi-zone is veranderd"
         },
         "titleFormatted": {
           "en": "Power Saving Zone has changed to [[power_saving_zone]]",
-          "nl": "Wifi-zone is veranderd naar [[power_saving_zone]]"
+          "nl": "WiFi-zone is veranderd naar [[power_saving_zone]]"
         },
         "hint": {
           "en": "This flowcard is activated when the Power Saving Zone has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de wifi-zone veranderd is."
+          "nl": "Deze kaart wordt geactiveerd wanneer de WiFi-zone veranderd is."
         },
         "platforms": [
           "local",
@@ -721,7 +721,7 @@
       {
         "title": {
           "en": "Is !{{inside|outside}} Power Saving Zone",
-          "nl": "Is !{{binnen|buiten}} wifi-zone"
+          "nl": "Is !{{binnen|buiten}} WiFi-zone"
         },
         "platforms": [
           "local",
@@ -775,11 +775,11 @@
       {
         "title": {
           "en": "Power Saving Zone !{{is|is not}}",
-          "nl": "Wifi-zone !{{is|is niet}}"
+          "nl": "WiFi-zone !{{is|is niet}}"
         },
         "titleFormatted": {
           "en": "Power Saving Zone !{{is|is not}} equal to [[power_saving_zone]]",
-          "nl": "Wifi-zone !{{is|is niet}} gelijk aan [[power_saving_zone]]"
+          "nl": "WiFi-zone !{{is|is niet}} gelijk aan [[power_saving_zone]]"
         },
         "platforms": [
           "local",
@@ -1264,7 +1264,7 @@
       "type": "boolean",
       "title": {
         "en": "In Power Saving Zone",
-        "nl": "In Wifi-zone"
+        "nl": "In WiFi-zone"
       },
       "getable": true,
       "setable": false,
@@ -1273,11 +1273,11 @@
       "icon": "/assets/capabilities/in_power_saving_zone.svg",
       "insightsTitleTrue": {
         "en": "Entered Power Saving Zone",
-        "nl": "Wifi-zone binnengegaan"
+        "nl": "WiFi-zone binnengegaan"
       },
       "insightsTitleFalse": {
         "en": "Left Power Saving Zone",
-        "nl": "Wifi-zone verlaten"
+        "nl": "WiFi-zone verlaten"
       }
     },
     "latitude": {
@@ -1345,7 +1345,7 @@
       "type": "string",
       "title": {
         "en": "Power Saving Zone",
-        "nl": "Wifi-zone"
+        "nl": "WiFi-zone"
       },
       "getable": true,
       "setable": false,
