@@ -1275,7 +1275,8 @@
       },
       "getable": true,
       "setable": false,
-      "uiComponent": null
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/power_saving_zone.svg"
     },
     "speed": {
       "type": "number",
