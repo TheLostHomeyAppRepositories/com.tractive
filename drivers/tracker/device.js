@@ -86,6 +86,11 @@ class TrackerDevice extends Device {
         data.altitude = Number(position.altitude);
       }
 
+      // Sensor used
+      if ('sensor_used' in position) {
+        data.location_source = position.sensor_used.toLowerCase();
+      }
+
       // Latitude / longitude
       if ('latlong' in position) {
         const lat = this.getCapabilityValue('latitude');
@@ -185,8 +190,15 @@ class TrackerDevice extends Device {
 
   // Synchronize capabilites
   async syncCapabilities(data) {
+    // Location source
+    if (!this.hasCapability('location_source')) {
+      this.addCapability('location_source').catch(this.error);
+      this.log('Added \'location_source\' capability');
+    }
+
     if (blank(data.capabilities)) return;
 
+    // Sync via capabilities
     for (const [name, capabilities] of Object.entries(TrackerCapabilities)) {
       for (const capability of capabilities) {
         // Add missing capabilities

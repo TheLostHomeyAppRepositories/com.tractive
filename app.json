@@ -466,6 +466,60 @@
       },
       {
         "title": {
+          "en": "Location source has changed",
+          "nl": "Locatiebron is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Location source has changed to [[location_source]]",
+          "nl": "Locatiebron is veranderd naar [[location_source]]"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the location source has changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de locatiebron veranderd is."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "dropdown",
+            "title": {
+              "en": "source",
+              "nl": "bron"
+            },
+            "name": "location_source",
+            "values": [
+              {
+                "id": "phone",
+                "title": {
+                  "en": "Bluetooth"
+                }
+              },
+              {
+                "id": "known_wifi",
+                "title": {
+                  "en": "WiFi"
+                }
+              },
+              {
+                "id": "gps",
+                "title": {
+                  "en": "GPS"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=location_source"
+          }
+        ],
+        "id": "location_source_changed"
+      },
+      {
+        "title": {
           "en": "Power Saving Zone has changed",
           "nl": "WiFi-zone is veranderd"
         },
@@ -774,6 +828,56 @@
       },
       {
         "title": {
+          "en": "Location source !{{is|is not}}",
+          "nl": "Locatiebron !{{is|is niet}}"
+        },
+        "titleFormatted": {
+          "en": "Location source !{{is|is not}} equal to [[location_source]]",
+          "nl": "Locatiebron !{{is|is niet}} gelijk aan [[location_source]]"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "dropdown",
+            "title": {
+              "en": "source",
+              "nl": "bron"
+            },
+            "name": "location_source",
+            "values": [
+              {
+                "id": "phone",
+                "title": {
+                  "en": "Bluetooth"
+                }
+              },
+              {
+                "id": "known_wifi",
+                "title": {
+                  "en": "WiFi"
+                }
+              },
+              {
+                "id": "gps",
+                "title": {
+                  "en": "GPS"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=location_source"
+          }
+        ],
+        "id": "location_source"
+      },
+      {
+        "title": {
           "en": "Power Saving Zone !{{is|is not}}",
           "nl": "WiFi-zone !{{is|is niet}}"
         },
@@ -1037,6 +1141,7 @@
         "battery_state",
         "in_power_saving_zone",
         "power_saving_zone",
+        "location_source",
         "live_tracking",
         "buzzer_control",
         "led_control",
@@ -1329,6 +1434,37 @@
         "en": "LIVE Tracking stopped",
         "nl": "LIVE Tracking gestopt"
       }
+    },
+    "location_source": {
+      "type": "enum",
+      "title": {
+        "en": "Location Source",
+        "nl": "Locatiebron"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/location_source.svg",
+      "values": [
+        {
+          "id": "phone",
+          "title": {
+            "en": "Bluetooth"
+          }
+        },
+        {
+          "id": "known_wifi",
+          "title": {
+            "en": "WiFi"
+          }
+        },
+        {
+          "id": "gps",
+          "title": {
+            "en": "GPS"
+          }
+        }
+      ]
     },
     "longitude": {
       "type": "number",

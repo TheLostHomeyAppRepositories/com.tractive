@@ -1,0 +1,53 @@
+{
+  "title": {
+    "en": "Location source has changed",
+    "nl": "Locatiebron is veranderd"
+  },
+  "titleFormatted": {
+    "en": "Location source has changed to [[location_source]]",
+    "nl": "Locatiebron is veranderd naar [[location_source]]"
+  },
+  "hint": {
+    "en": "This flowcard is activated when the location source has changed.",
+    "nl": "Deze kaart wordt geactiveerd wanneer de locatiebron veranderd is."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "dropdown",
+      "title": {
+        "en": "source",
+        "nl": "bron"
+      },
+      "name": "location_source",
+      "values": [
+        {
+          "id": "phone",
+          "title": {
+            "en": "Bluetooth"
+          }
+        },
+        {
+          "id": "known_wifi",
+          "title": {
+            "en": "WiFi"
+          }
+        },
+        {
+          "id": "gps",
+          "title": {
+            "en": "GPS"
+          }
+        }
+      ]
+    },
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=tracker&capabilities=location_source"
+    }
+  ]
+}

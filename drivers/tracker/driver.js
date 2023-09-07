@@ -43,7 +43,7 @@ class TrackerDriver extends Driver {
       }
     }
 
-    caps.push('altitude', 'speed', 'latitude', 'longitude');
+    caps.push('location_source', 'altitude', 'speed', 'latitude', 'longitude');
 
     return caps;
   }

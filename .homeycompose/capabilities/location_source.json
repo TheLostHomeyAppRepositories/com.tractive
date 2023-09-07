@@ -1,0 +1,31 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Location Source",
+    "nl": "Locatiebron"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/location_source.svg",
+  "values": [
+    {
+      "id": "phone",
+      "title": {
+        "en": "Bluetooth"
+      }
+    },
+    {
+      "id": "known_wifi",
+      "title": {
+        "en": "WiFi"
+      }
+    },
+    {
+      "id": "gps",
+      "title": {
+        "en": "GPS"
+      }
+    }
+  ]
+}
