@@ -4,8 +4,8 @@
     "nl": "LIVE Tracking starten"
   },
   "hint": {
-    "en": "This flowcard will start LIVE Tracking.",
-    "nl": "Deze kaart start LIVE Tracking."
+    "en": "Use this flowcard to start LIVE Tracking.",
+    "nl": "Gebruik deze kaart om LIVE Tracking te starten."
   },
   "platforms": [
     "local",

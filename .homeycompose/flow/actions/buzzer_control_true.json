@@ -4,8 +4,8 @@
     "nl": "Geluid inschakelen"
   },
   "hint": {
-    "en": "This flowcard will turn on the sound.",
-    "nl": "Deze kaart schakelt het geluid in."
+    "en": "Use this flowcard to turn on the sound.",
+    "nl": "Gebruik deze kaart om het geluid in te schakelen."
   },
   "platforms": [
     "local",

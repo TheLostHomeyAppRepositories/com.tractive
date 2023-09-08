@@ -4,8 +4,8 @@
     "nl": "Licht inschakelen"
   },
   "hint": {
-    "en": "This flowcard will turn on the light.",
-    "nl": "Deze kaart schakelt het licht in."
+    "en": "Use this flowcard to turn on the light.",
+    "nl": "Gebruik deze kaart om het licht in te schakelen."
   },
   "platforms": [
     "local",

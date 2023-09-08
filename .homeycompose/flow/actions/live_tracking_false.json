@@ -4,8 +4,8 @@
     "nl": "LIVE Tracking stoppen"
   },
   "hint": {
-    "en": "This flowcard will stop LIVE Tracking.",
-    "nl": "Deze kaart stopt LIVE Tracking."
+    "en": "Use this flowcard to stop LIVE Tracking.",
+    "nl": "Gebruik deze kaart om LIVE Tracking te stoppen."
   },
   "platforms": [
     "local",

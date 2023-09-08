@@ -1,11 +1,11 @@
 {
   "title": {
-    "en": "GPS location has changed",
+    "en": "GPS location changed",
     "nl": "GPS-locatie is veranderd"
   },
   "hint": {
-    "en": "This flowcard is activated when the the GPS location has changed.",
-    "nl": "Deze kaart wordt geactiveerd wanneer de GPS-locatie veranderd is."
+    "en": "This flowcard is activated when the the GPS location was changed.",
+    "nl": "Deze kaart wordt geactiveerd wanneer de GPS-locatie veranderd werd."
   },
   "platforms": [
     "local",
@@ -77,7 +77,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=tracker"
+      "filter": "driver_id=tracker&capabilities=location_source"
     }
   ]
 }

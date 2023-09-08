@@ -14,11 +14,11 @@
   "args": [
     {
       "type": "dropdown",
+      "name": "tracker_state",
       "title": {
         "en": "state",
         "nl": "status"
       },
-      "name": "tracker_state",
       "values": [
         {
           "id": "power_saving",

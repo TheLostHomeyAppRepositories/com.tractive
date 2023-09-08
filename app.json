@@ -86,12 +86,12 @@
     "triggers": [
       {
         "title": {
-          "en": "Altitude has changed",
+          "en": "Altitude changed",
           "nl": "Hoogte is veranderd"
         },
         "hint": {
-          "en": "This flowcard is activated when the altitude has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de hoogte veranderd is."
+          "en": "This flowcard is activated when the altitude was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de hoogte veranderd werd."
         },
         "platforms": [
           "local",
@@ -119,7 +119,7 @@
       },
       {
         "title": {
-          "en": "Battery state has changed",
+          "en": "Battery state changed",
           "nl": "Batterijstatus is veranderd"
         },
         "titleFormatted": {
@@ -127,8 +127,8 @@
           "nl": "Batterijstatus is veranderd naar [[battery_state]]"
         },
         "hint": {
-          "en": "This flowcard is activated when the battery state has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de batterijstatus veranderd is."
+          "en": "This flowcard is activated when the battery state was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de batterijstatus veranderd werd."
         },
         "platforms": [
           "local",
@@ -137,11 +137,11 @@
         "args": [
           {
             "type": "dropdown",
+            "name": "battery_state",
             "title": {
               "en": "state",
               "nl": "status"
             },
-            "name": "battery_state",
             "values": [
               {
                 "id": "full",
@@ -382,12 +382,12 @@
       },
       {
         "title": {
-          "en": "GPS location has changed",
+          "en": "GPS location changed",
           "nl": "GPS-locatie is veranderd"
         },
         "hint": {
-          "en": "This flowcard is activated when the the GPS location has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de GPS-locatie veranderd is."
+          "en": "This flowcard is activated when the the GPS location was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de GPS-locatie veranderd werd."
         },
         "platforms": [
           "local",
@@ -459,14 +459,14 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=tracker"
+            "filter": "driver_id=tracker&capabilities=location_source"
           }
         ],
         "id": "location_changed"
       },
       {
         "title": {
-          "en": "Location source has changed",
+          "en": "Location source changed",
           "nl": "Locatiebron is veranderd"
         },
         "titleFormatted": {
@@ -474,8 +474,8 @@
           "nl": "Locatiebron is veranderd naar [[location_source]]"
         },
         "hint": {
-          "en": "This flowcard is activated when the location source has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de locatiebron veranderd is."
+          "en": "This flowcard is activated when the location source was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de locatiebron veranderd werd."
         },
         "platforms": [
           "local",
@@ -484,11 +484,11 @@
         "args": [
           {
             "type": "dropdown",
+            "name": "location_source",
             "title": {
               "en": "source",
               "nl": "bron"
             },
-            "name": "location_source",
             "values": [
               {
                 "id": "phone",
@@ -520,7 +520,7 @@
       },
       {
         "title": {
-          "en": "Power Saving Zone has changed",
+          "en": "Power Saving Zone changed",
           "nl": "WiFi-zone is veranderd"
         },
         "titleFormatted": {
@@ -528,8 +528,8 @@
           "nl": "WiFi-zone is veranderd naar [[power_saving_zone]]"
         },
         "hint": {
-          "en": "This flowcard is activated when the Power Saving Zone has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de WiFi-zone veranderd is."
+          "en": "This flowcard is activated when the Power Saving Zone was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de WiFi-zone veranderd werd."
         },
         "platforms": [
           "local",
@@ -538,11 +538,11 @@
         "args": [
           {
             "type": "autocomplete",
+            "name": "power_saving_zone",
             "title": {
               "en": "name",
               "nl": "naam"
             },
-            "name": "power_saving_zone",
             "placeholder": {
               "en": "Home",
               "nl": "Thuis"
@@ -558,12 +558,12 @@
       },
       {
         "title": {
-          "en": "Speed has changed",
+          "en": "Speed changed",
           "nl": "Snelheid is veranderd"
         },
         "hint": {
-          "en": "This flowcard is activated when the speed has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de snelheid veranderd is."
+          "en": "This flowcard is activated when the speed was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de snelheid veranderd werd."
         },
         "platforms": [
           "local",
@@ -591,7 +591,7 @@
       },
       {
         "title": {
-          "en": "Tracker state has changed",
+          "en": "Tracker state changed",
           "nl": "Trackerstatus is veranderd"
         },
         "titleFormatted": {
@@ -599,8 +599,8 @@
           "nl": "Trackerstatus is veranderd naar [[tracker_state]]"
         },
         "hint": {
-          "en": "This flowcard is activated when the tracker state has changed.",
-          "nl": "Deze kaart wordt geactiveerd wanneer de trackerstatus veranderd is."
+          "en": "This flowcard is activated when the tracker state was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de trackerstatus veranderd werd."
         },
         "platforms": [
           "local",
@@ -609,11 +609,11 @@
         "args": [
           {
             "type": "dropdown",
+            "name": "tracker_state",
             "title": {
               "en": "state",
               "nl": "status"
             },
-            "name": "tracker_state",
             "values": [
               {
                 "id": "power_saving",
@@ -685,11 +685,11 @@
         "args": [
           {
             "type": "dropdown",
+            "name": "battery_state",
             "title": {
               "en": "state",
               "nl": "status"
             },
-            "name": "battery_state",
             "values": [
               {
                 "id": "full",
@@ -842,11 +842,11 @@
         "args": [
           {
             "type": "dropdown",
+            "name": "location_source",
             "title": {
               "en": "source",
               "nl": "bron"
             },
-            "name": "location_source",
             "values": [
               {
                 "id": "phone",
@@ -892,11 +892,11 @@
         "args": [
           {
             "type": "autocomplete",
+            "name": "power_saving_zone",
             "title": {
               "en": "name",
               "nl": "naam"
             },
-            "name": "power_saving_zone",
             "placeholder": {
               "en": "Home",
               "nl": "Thuis"
@@ -926,11 +926,11 @@
         "args": [
           {
             "type": "dropdown",
+            "name": "tracker_state",
             "title": {
               "en": "state",
               "nl": "status"
             },
-            "name": "tracker_state",
             "values": [
               {
                 "id": "power_saving",
@@ -992,8 +992,8 @@
           "nl": "Geluid uitschakelen"
         },
         "hint": {
-          "en": "This flowcard will turn off the sound.",
-          "nl": "Deze kaart schakelt het geluid uit."
+          "en": "Use this flowcard to turn off the sound.",
+          "nl": "Gebruik deze kaart om het geluid uit te schakelen."
         },
         "platforms": [
           "local",
@@ -1014,8 +1014,8 @@
           "nl": "Geluid inschakelen"
         },
         "hint": {
-          "en": "This flowcard will turn on the sound.",
-          "nl": "Deze kaart schakelt het geluid in."
+          "en": "Use this flowcard to turn on the sound.",
+          "nl": "Gebruik deze kaart om het geluid in te schakelen."
         },
         "platforms": [
           "local",
@@ -1036,8 +1036,8 @@
           "nl": "Licht uitschakelen"
         },
         "hint": {
-          "en": "This flowcard will turn off the light.",
-          "nl": "Deze kaart schakelt het licht uit."
+          "en": "Use this flowcard to turn off the light.",
+          "nl": "Gebruik deze kaart om het licht uit te schakelen."
         },
         "platforms": [
           "local",
@@ -1058,8 +1058,8 @@
           "nl": "Licht inschakelen"
         },
         "hint": {
-          "en": "This flowcard will turn on the light.",
-          "nl": "Deze kaart schakelt het licht in."
+          "en": "Use this flowcard to turn on the light.",
+          "nl": "Gebruik deze kaart om het licht in te schakelen."
         },
         "platforms": [
           "local",
@@ -1080,8 +1080,8 @@
           "nl": "LIVE Tracking stoppen"
         },
         "hint": {
-          "en": "This flowcard will stop LIVE Tracking.",
-          "nl": "Deze kaart stopt LIVE Tracking."
+          "en": "Use this flowcard to stop LIVE Tracking.",
+          "nl": "Gebruik deze kaart om LIVE Tracking te stoppen."
         },
         "platforms": [
           "local",
@@ -1102,8 +1102,8 @@
           "nl": "LIVE Tracking starten"
         },
         "hint": {
-          "en": "This flowcard will start LIVE Tracking.",
-          "nl": "Deze kaart start LIVE Tracking."
+          "en": "Use this flowcard to start LIVE Tracking.",
+          "nl": "Gebruik deze kaart om LIVE Tracking te starten."
         },
         "platforms": [
           "local",

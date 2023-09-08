@@ -1,11 +1,11 @@
 {
   "title": {
-    "en": "Speed has changed",
+    "en": "Speed changed",
     "nl": "Snelheid is veranderd"
   },
   "hint": {
-    "en": "This flowcard is activated when the speed has changed.",
-    "nl": "Deze kaart wordt geactiveerd wanneer de snelheid veranderd is."
+    "en": "This flowcard is activated when the speed was changed.",
+    "nl": "Deze kaart wordt geactiveerd wanneer de snelheid veranderd werd."
   },
   "platforms": [
     "local",

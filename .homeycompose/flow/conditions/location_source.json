@@ -14,11 +14,11 @@
   "args": [
     {
       "type": "dropdown",
+      "name": "location_source",
       "title": {
         "en": "source",
         "nl": "bron"
       },
-      "name": "location_source",
       "values": [
         {
           "id": "phone",

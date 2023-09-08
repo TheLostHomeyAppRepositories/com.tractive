@@ -4,8 +4,8 @@
     "nl": "Licht uitschakelen"
   },
   "hint": {
-    "en": "This flowcard will turn off the light.",
-    "nl": "Deze kaart schakelt het licht uit."
+    "en": "Use this flowcard to turn off the light.",
+    "nl": "Gebruik deze kaart om het licht uit te schakelen."
   },
   "platforms": [
     "local",

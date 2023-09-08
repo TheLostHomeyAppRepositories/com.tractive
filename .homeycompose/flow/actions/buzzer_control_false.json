@@ -4,8 +4,8 @@
     "nl": "Geluid uitschakelen"
   },
   "hint": {
-    "en": "This flowcard will turn off the sound.",
-    "nl": "Deze kaart schakelt het geluid uit."
+    "en": "Use this flowcard to turn off the sound.",
+    "nl": "Gebruik deze kaart om het geluid uit te schakelen."
   },
   "platforms": [
     "local",

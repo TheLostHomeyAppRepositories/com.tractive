@@ -14,11 +14,11 @@
   "args": [
     {
       "type": "dropdown",
+      "name": "battery_state",
       "title": {
         "en": "state",
         "nl": "status"
       },
-      "name": "battery_state",
       "values": [
         {
           "id": "full",

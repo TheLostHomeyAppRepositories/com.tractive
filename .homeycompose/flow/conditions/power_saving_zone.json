@@ -14,11 +14,11 @@
   "args": [
     {
       "type": "autocomplete",
+      "name": "power_saving_zone",
       "title": {
         "en": "name",
         "nl": "naam"
       },
-      "name": "power_saving_zone",
       "placeholder": {
         "en": "Home",
         "nl": "Thuis"
