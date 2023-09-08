@@ -491,9 +491,9 @@
             },
             "values": [
               {
-                "id": "phone",
+                "id": "cell_locate",
                 "title": {
-                  "en": "Bluetooth"
+                  "en": "Telefoon"
                 }
               },
               {
@@ -849,9 +849,9 @@
             },
             "values": [
               {
-                "id": "phone",
+                "id": "cell_locate",
                 "title": {
-                  "en": "Bluetooth"
+                  "en": "Telefoon"
                 }
               },
               {
@@ -1447,9 +1447,9 @@
       "icon": "/assets/capabilities/location_source.svg",
       "values": [
         {
-          "id": "phone",
+          "id": "cell_locate",
           "title": {
-            "en": "Bluetooth"
+            "en": "Telefoon"
           }
         },
         {
