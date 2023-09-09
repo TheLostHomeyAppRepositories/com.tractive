@@ -1,0 +1,37 @@
+{
+  "title": {
+    "en": "Virtual fence changed",
+    "nl": "Virtuele omheining is veranderd"
+  },
+  "titleFormatted": {
+    "en": "Virtual fence has changed to [[geofence]]",
+    "nl": "Virtuele omheining is veranderd naar [[geofence]]"
+  },
+  "hint": {
+    "en": "This flowcard is activated when the virtual fence was changed.",
+    "nl": "Deze kaart wordt geactiveerd wanneer de virtuele omheining veranderd werd."
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "geofence",
+      "title": {
+        "en": "name",
+        "nl": "naam"
+      },
+      "placeholder": {
+        "en": "Home",
+        "nl": "Thuis"
+      }
+    },
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=tracker&capabilities=geofence"
+    }
+  ]
+}

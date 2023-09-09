@@ -13,6 +13,7 @@ class TrackerDriver extends Driver {
   async onOAuth2Init() {
     this.locationTrigger = this.homey.flow.getDeviceTriggerCard('location_changed');
     this.inPowerSavingZoneTrueTrigger = this.homey.flow.getDeviceTriggerCard('in_power_saving_zone_true');
+    this.inGeofenceTrueTrigger = this.homey.flow.getDeviceTriggerCard('in_geofence_true');
 
     await super.onOAuth2Init();
   }
@@ -33,6 +34,8 @@ class TrackerDriver extends Driver {
       'tracker_state',
       'charging_state',
       'battery_state',
+      'in_geofence',
+      'geofence',
     ];
 
     for (const [name, capabilities] of Object.entries(TrackerCapabilities)) {

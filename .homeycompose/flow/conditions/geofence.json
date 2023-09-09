@@ -1,0 +1,33 @@
+{
+  "title": {
+    "en": "Virtual Fence !{{is|is not}}",
+    "nl": "Virtuele omheining !{{is|is niet}}"
+  },
+  "titleFormatted": {
+    "en": "Virtual fence !{{is|is not}} [[geofence]]",
+    "nl": "Virtuele omheining !{{is|is niet}} [[geofence]]"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "geofence",
+      "title": {
+        "en": "name",
+        "nl": "naam"
+      },
+      "placeholder": {
+        "en": "Home",
+        "nl": "Thuis"
+      }
+    },
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=tracker&capabilities=geofence"
+    }
+  ]
+}

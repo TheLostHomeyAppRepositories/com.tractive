@@ -234,6 +234,90 @@
       },
       {
         "title": {
+          "en": "Virtual fence changed",
+          "nl": "Virtuele omheining is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Virtual fence has changed to [[geofence]]",
+          "nl": "Virtuele omheining is veranderd naar [[geofence]]"
+        },
+        "hint": {
+          "en": "This flowcard is activated when the virtual fence was changed.",
+          "nl": "Deze kaart wordt geactiveerd wanneer de virtuele omheining veranderd werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "geofence",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "placeholder": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=geofence"
+          }
+        ],
+        "id": "geofence_changed"
+      },
+      {
+        "title": {
+          "en": "Virtual fence was left",
+          "nl": "Virtuele omheining werd verlaten"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the virtual fence was left.",
+          "nl": "Deze kaart wordt geactiveerd wanneer virtuele omheining verlaten werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=in_geofence"
+          }
+        ],
+        "highlight": true,
+        "id": "in_geofence_false"
+      },
+      {
+        "title": {
+          "en": "Virtual fence was entered",
+          "nl": "Virtuele omheining werd binnengegaan"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the virtual fence was entered.",
+          "nl": "Deze kaart wordt geactiveerd wanneer virtuele omheining binnengegaan werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=in_geofence"
+          }
+        ],
+        "highlight": true,
+        "id": "in_geofence_true"
+      },
+      {
+        "title": {
           "en": "Power Saving Zone was left",
           "nl": "WiFi-zone werd verlaten"
         },
@@ -774,6 +858,58 @@
       },
       {
         "title": {
+          "en": "Virtual Fence !{{is|is not}}",
+          "nl": "Virtuele omheining !{{is|is niet}}"
+        },
+        "titleFormatted": {
+          "en": "Virtual fence !{{is|is not}} [[geofence]]",
+          "nl": "Virtuele omheining !{{is|is niet}} [[geofence]]"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "geofence",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "placeholder": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=geofence"
+          }
+        ],
+        "id": "geofence"
+      },
+      {
+        "title": {
+          "en": "Is !{{inside|outside}} virtual fence",
+          "nl": "Is !{{binnen|buiten}} virtuele omheining"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=in_geofence"
+          }
+        ],
+        "id": "in_geofence"
+      },
+      {
+        "title": {
           "en": "Is !{{inside|outside}} Power Saving Zone",
           "nl": "Is !{{binnen|buiten}} WiFi-zone"
         },
@@ -1139,7 +1275,9 @@
         "measure_battery",
         "charging_state",
         "battery_state",
+        "in_geofence",
         "in_power_saving_zone",
+        "geofence",
         "power_saving_zone",
         "location_source",
         "live_tracking",
@@ -1365,6 +1503,36 @@
         "nl": "Opgeladen"
       }
     },
+    "geofence": {
+      "type": "string",
+      "title": {
+        "en": "Virtual Fence",
+        "nl": "Virtuele omheining"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null
+    },
+    "in_geofence": {
+      "type": "boolean",
+      "title": {
+        "en": "In Virtual Fence",
+        "nl": "In virtuele omheining"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/geofence.svg",
+      "insightsTitleTrue": {
+        "en": "Entered Virtual Fence",
+        "nl": "Virtuele omheining binnengegaan"
+      },
+      "insightsTitleFalse": {
+        "en": "Left Virtual Fence",
+        "nl": "Virtuele omheining verlaten"
+      }
+    },
     "in_power_saving_zone": {
       "type": "boolean",
       "title": {
@@ -1485,8 +1653,7 @@
       },
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/capabilities/power_saving_zone.svg"
+      "uiComponent": null
     },
     "speed": {
       "type": "number",

@@ -1,8 +1,8 @@
 {
   "type": "string",
   "title": {
-    "en": "Power Saving Zone",
-    "nl": "WiFi-zone"
+    "en": "Virtual Fence",
+    "nl": "Virtuele omheining"
   },
   "getable": true,
   "setable": false,

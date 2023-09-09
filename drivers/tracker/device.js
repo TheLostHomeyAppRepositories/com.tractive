@@ -1,5 +1,6 @@
 'use strict';
 
+const geo = require('geolib');
 const { TrackerCapabilities, TrackerNamesBySku, TrackerNames } = require('../../lib/Enums');
 const Device = require('../../lib/Device');
 const { filled, blank } = require('../../lib/Utils');
@@ -25,12 +26,9 @@ class TrackerDevice extends Device {
 
   // Return parsed data
   async parseData(raw) {
-    const data = {};
+    this.log('Parse data');
 
-    // Power Saving Zones (first for lookup later)
-    if ('power_saving_zones' in raw) {
-      data.power_saving_zones = await this.savePowerSavingZones(raw.power_saving_zones);
-    }
+    const data = {};
 
     // Battery state
     if ('battery_state' in raw) {
@@ -50,6 +48,11 @@ class TrackerDevice extends Device {
     // Charging state
     if ('charging_state' in raw) {
       data.charging_state = raw.charging_state === 'CHARGING';
+    }
+
+    // Geofences
+    if ('geofences' in raw) {
+      data.geofences = raw.geofences;
     }
 
     // Hardware
@@ -93,32 +96,20 @@ class TrackerDevice extends Device {
 
       // Latitude / longitude
       if ('latlong' in position) {
-        const lat = this.getCapabilityValue('latitude');
-        const long = this.getCapabilityValue('longitude');
-
-        data.latitude = Number(position.latlong[0]);
-        data.longitude = Number(position.latlong[1]);
-
-        if (lat !== data.latitude || long !== data.longitude) {
-          const address = await this.oAuth2Client.getAddress(data.latitude, data.longitude);
-
-          data.address = {
-            house_number: (address.house_number || '').toLowerCase(),
-            zip_code: (address.zip_code || '').toUpperCase(),
-            country: (address.country || '').toUpperCase(),
-            street: (address.street || '').toLowerCase(),
-            city: (address.city || '').toLowerCase(),
-          };
-        }
+        data.latlong = position.latlong;
       }
 
       // Speed (m/s)
       data.speed = Number(position.speed || 0);
     }
 
-    // Power Saving Zone
-    data.power_saving_zone = await this.getPowerSavingZoneName(raw.power_saving_zone_id);
-    data.in_power_saving_zone = filled(raw.power_saving_zone_id || null);
+    // Power Saving Zones
+    if ('power_saving_zones' in raw) {
+      data.power_saving_zones = raw.power_saving_zones;
+    }
+
+    // Power Saving Zone ID
+    data.power_saving_zone_id = raw.power_saving_zone_id || null;
 
     // Tracker state
     const state = raw.tracker_state || raw.state || null;
@@ -141,6 +132,51 @@ class TrackerDevice extends Device {
     }
 
     raw = null;
+
+    return data;
+  }
+
+  // Return processed data
+  async processData(data) {
+    this.log('Process data');
+
+    // Save geofences
+    if ('geofences' in data) {
+      await this.saveGeofences(data.geofences);
+    }
+
+    // Save Power Saving Zones
+    if ('power_saving_zones' in data) {
+      await this.savePowerSavingZones(data.power_saving_zones);
+    }
+
+    // Power Saving Zone
+    data.in_power_saving_zone = filled(data.power_saving_zone_id);
+    data.power_saving_zone = await this.getPowerSavingZoneName(data.power_saving_zone_id);
+
+    // Latitude / longitude
+    if ('latlong' in data) {
+      const lat = this.getCapabilityValue('latitude');
+      const long = this.getCapabilityValue('longitude');
+
+      const latitude = Number(data.latlong[0]);
+      const longitude = Number(data.latlong[1]);
+
+      if (lat !== latitude || long !== longitude) {
+        // Address
+        data.address = await this.oAuth2Client.getAddress(latitude, longitude);
+
+        // Geofence
+        data.geofence = await this.getGeofenceName({ latitude, longitude });
+        data.in_geofence = data.geofence !== '-';
+
+        // Coordinates
+        data.latitude = latitude;
+        data.longitude = longitude;
+      }
+
+      delete data.latlong;
+    }
 
     return data;
   }
@@ -190,6 +226,18 @@ class TrackerDevice extends Device {
 
   // Synchronize capabilites
   async syncCapabilities(data) {
+    // Geofence
+    if (!this.hasCapability('geofence')) {
+      this.addCapability('geofence').catch(this.error);
+      this.log('Added \'geofence\' capability');
+    }
+
+    // In geofence
+    if (!this.hasCapability('in_geofence')) {
+      this.addCapability('in_geofence').catch(this.error);
+      this.log('Added \'in_geofence\' capability');
+    }
+
     // Location source
     if (!this.hasCapability('location_source')) {
       this.addCapability('location_source').catch(this.error);
@@ -234,6 +282,76 @@ class TrackerDevice extends Device {
   }
 
   /*
+  | Geofence functions
+  */
+
+  async getGeofenceName(coordinates) {
+    let fences = this.getStoreValue('geofences') || [];
+    let name = '-';
+
+    for (const fence of fences) {
+      // Circle
+      if (fence.shape === 'circle') {
+        if (geo.isPointWithinRadius(coordinates, fence.coords, fence.radius)) {
+          name = fence.name;
+        }
+      }
+
+      // Rectangle
+      if (fence.shape === 'rectangle') {
+        // Todo
+      }
+
+      // Polygon
+      if (fence.shape === 'polygon') {
+        // Todo
+      }
+    }
+
+    fences = null;
+
+    return name;
+  }
+
+  // Save geofences in store
+  async saveGeofences(raw) {
+    this.log('Saving geofences');
+
+    if (blank(raw)) {
+      await this.setStoreValue('geofences', []);
+
+      return;
+    }
+
+    let fences = [];
+    let active = raw.filter((entry) => entry.active && filled(entry.name) && blank(entry.deleted_at));
+
+    raw = null;
+
+    for (const fence of active) {
+      delete fence.created_at;
+      delete fence.updated_at;
+      delete fence._version;
+      delete fence.trigger;
+      delete fence.deleted_at;
+      delete fence.icon;
+      delete fence.source_geofence_id;
+      delete fence.device;
+      delete fence._type;
+
+      fence.shape = fence.shape.toLowerCase();
+      fence.name = fence.name.trim();
+
+      fences.push(fence);
+    }
+
+    await this.setStoreValue('geofences', fences);
+
+    fences = null;
+    active = null;
+  }
+
+  /*
   | Power Saving Zone functions
   */
 
@@ -256,7 +374,13 @@ class TrackerDevice extends Device {
 
   // Save Power Saving Zones in store
   async savePowerSavingZones(raw) {
-    if (blank(raw)) return;
+    this.log('Saving Power Saving Zones');
+
+    if (blank(raw)) {
+      await this.setStoreValue('power_saving_zones', {});
+
+      return;
+    }
 
     let zones = {};
 

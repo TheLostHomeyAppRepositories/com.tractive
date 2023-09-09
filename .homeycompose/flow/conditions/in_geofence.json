@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Is !{{inside|outside}} virtual fence",
+    "nl": "Is !{{binnen|buiten}} virtuele omheining"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=tracker&capabilities=in_geofence"
+    }
+  ]
+}
