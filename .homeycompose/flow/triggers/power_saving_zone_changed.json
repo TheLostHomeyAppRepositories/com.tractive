@@ -1,14 +1,14 @@
 {
   "title": {
-    "en": "Power Saving Zone changed",
+    "en": "Power saving zone changed",
     "nl": "WiFi-zone is veranderd"
   },
   "titleFormatted": {
-    "en": "Power Saving Zone has changed to [[power_saving_zone]]",
+    "en": "Power saving zone has changed to [[power_saving_zone]]",
     "nl": "WiFi-zone is veranderd naar [[power_saving_zone]]"
   },
   "hint": {
-    "en": "This flowcard is activated when the Power Saving Zone was changed.",
+    "en": "This flowcard is activated when the power saving zone was changed.",
     "nl": "Deze kaart wordt geactiveerd wanneer de WiFi-zone veranderd werd."
   },
   "platforms": [

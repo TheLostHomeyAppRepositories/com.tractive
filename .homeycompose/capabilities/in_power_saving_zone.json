@@ -10,11 +10,11 @@
   "uiComponent": "sensor",
   "icon": "/assets/capabilities/in_power_saving_zone.svg",
   "insightsTitleTrue": {
-    "en": "Entered Power Saving Zone",
+    "en": "Entered power saving zone",
     "nl": "WiFi-zone binnengegaan"
   },
   "insightsTitleFalse": {
-    "en": "Left Power Saving Zone",
+    "en": "Left power saving zone",
     "nl": "WiFi-zone verlaten"
   }
 }

@@ -112,14 +112,14 @@ class TrackerDevice extends Device {
     data.power_saving_zone_id = raw.power_saving_zone_id || null;
 
     // Tracker state
-    const state = raw.tracker_state || raw.state || null;
+    let state = raw.tracker_state || raw.state || null;
 
     if (filled(state)) {
       data.tracker_state = state.toLowerCase();
     }
 
     // Tracker state reason
-    const stateReason = raw.tracker_state_reason || raw.state_reason || null;
+    let stateReason = raw.tracker_state_reason || raw.state_reason || null;
 
     if (filled(stateReason)) {
       const reason = stateReason.toLowerCase();
@@ -131,6 +131,8 @@ class TrackerDevice extends Device {
       data.tracker_state_reason = reason;
     }
 
+    stateReason = null;
+    state = null;
     raw = null;
 
     return data;
@@ -151,8 +153,8 @@ class TrackerDevice extends Device {
     }
 
     // Power Saving Zone
-    data.in_power_saving_zone = filled(data.power_saving_zone_id);
     data.power_saving_zone = await this.getPowerSavingZoneName(data.power_saving_zone_id);
+    data.in_power_saving_zone = filled(data.power_saving_zone_id);
 
     // Latitude / longitude
     if ('latlong' in data) {
@@ -167,12 +169,17 @@ class TrackerDevice extends Device {
         data.address = await this.oAuth2Client.getAddress(latitude, longitude);
 
         // Geofence
-        data.geofence = await this.getGeofenceName({ latitude, longitude });
-        data.in_geofence = data.geofence !== '-';
+        let geofence = await this.getGeofence({ latitude, longitude });
+
+        data.geofence_type = geofence.fence_type || null;
+        data.geofence = geofence.name || '';
+        data.in_geofence = filled(geofence);
 
         // Coordinates
         data.latitude = latitude;
         data.longitude = longitude;
+
+        geofence = null;
       }
 
       delete data.latlong;
@@ -285,9 +292,8 @@ class TrackerDevice extends Device {
   | Geofence functions
   */
 
-  async getGeofenceName(coordinates) {
+  async getGeofence(coordinates) {
     let fences = this.getStoreValue('geofences') || [];
-    let name = '-';
 
     for (const fence of fences) {
       // Circle
@@ -298,7 +304,7 @@ class TrackerDevice extends Device {
         };
 
         if (geo.isPointWithinRadius(coordinates, latlong, fence.radius)) {
-          name = fence.name;
+          return fence;
         }
       }
 
@@ -315,7 +321,7 @@ class TrackerDevice extends Device {
 
     fences = null;
 
-    return name;
+    return null;
   }
 
   // Save geofences in store
@@ -346,6 +352,7 @@ class TrackerDevice extends Device {
 
       fence.shape = fence.shape.toLowerCase();
       fence.name = fence.name.trim();
+      fence.fence_type = fence.fence_type.toLowerCase();
 
       fences.push(fence);
     }
@@ -362,7 +369,7 @@ class TrackerDevice extends Device {
 
   // Return Power Saving Zone name
   async getPowerSavingZoneName(id) {
-    if (blank(id)) return '-';
+    if (blank(id)) return '';
 
     // Check store first
     const zones = this.getStoreValue('power_saving_zones') || {};
@@ -374,7 +381,7 @@ class TrackerDevice extends Device {
     // Get Power Saving Zone from API
     const zone = await this.oAuth2Client.getPowerSavingZone(id);
 
-    return (zone.name || '-').trim();
+    return (zone.name || '').trim();
   }
 
   // Save Power Saving Zones in store

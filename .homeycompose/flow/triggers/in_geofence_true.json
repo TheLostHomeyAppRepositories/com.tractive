@@ -11,6 +11,20 @@
     "local",
     "cloud"
   ],
+  "tokens": [
+    {
+      "type": "string",
+      "name": "geofence",
+      "title": {
+        "en": "Fence",
+        "nl": "Omheining"
+      },
+      "example": {
+        "en": "Home",
+        "nl": "Thuis"
+      }
+    }
+  ],
   "args": [
     {
       "type": "device",
