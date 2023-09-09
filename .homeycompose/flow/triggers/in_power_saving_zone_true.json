@@ -4,8 +4,8 @@
     "nl": "WiFi-zone werd binnengegaan"
   },
   "hint": {
-    "en": "This flowcard triggers when the power saving zone was entered.",
-    "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone binnengegaan werd."
+    "en": "This flowcard triggers when a power saving zone was entered.",
+    "nl": "Deze kaart wordt geactiveerd wanneer een WiFi-zone binnengegaan werd."
   },
   "platforms": [
     "local",

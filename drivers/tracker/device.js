@@ -171,9 +171,9 @@ class TrackerDevice extends Device {
         // Geofence
         let geofence = await this.getGeofence({ latitude, longitude });
 
-        data.geofence_type = geofence.fence_type || null;
-        data.geofence = geofence.name || '';
-        data.in_geofence = filled(geofence);
+        data.geofence = geofence.name;
+        data.in_geofence = filled(geofence.name);
+        data.geofence_type = geofence.fence_type;
 
         // Coordinates
         data.latitude = latitude;
@@ -321,7 +321,10 @@ class TrackerDevice extends Device {
 
     fences = null;
 
-    return null;
+    return {
+      name: '',
+      fence_type: null,
+    };
   }
 
   // Save geofences in store

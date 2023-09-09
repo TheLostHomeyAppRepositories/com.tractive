@@ -276,12 +276,26 @@
           "nl": "Virtuele omheining werd verlaten"
         },
         "hint": {
-          "en": "This flowcard triggers when the virtual fence was left.",
-          "nl": "Deze kaart wordt geactiveerd wanneer virtuele omheining verlaten werd."
+          "en": "This flowcard triggers when a virtual fence was left.",
+          "nl": "Deze kaart wordt geactiveerd wanneer een virtuele omheining verlaten werd."
         },
         "platforms": [
           "local",
           "cloud"
+        ],
+        "tokens": [
+          {
+            "type": "string",
+            "name": "geofence",
+            "title": {
+              "en": "Fence",
+              "nl": "Omheining"
+            },
+            "example": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          }
         ],
         "args": [
           {
@@ -299,8 +313,8 @@
           "nl": "Virtuele omheining werd binnengegaan"
         },
         "hint": {
-          "en": "This flowcard triggers when the virtual fence was entered.",
-          "nl": "Deze kaart wordt geactiveerd wanneer virtuele omheining binnengegaan werd."
+          "en": "This flowcard triggers when a virtual fence was entered.",
+          "nl": "Deze kaart wordt geactiveerd wanneer een virtuele omheining binnengegaan werd."
         },
         "platforms": [
           "local",
@@ -336,8 +350,8 @@
           "nl": "WiFi-zone werd verlaten"
         },
         "hint": {
-          "en": "This flowcard triggers when the power saving zone was left.",
-          "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone verlaten werd."
+          "en": "This flowcard triggers when a power saving zone was left.",
+          "nl": "Deze kaart wordt geactiveerd wanneer een WiFi-zone verlaten werd."
         },
         "platforms": [
           "local",
@@ -358,8 +372,8 @@
           "nl": "WiFi-zone werd binnengegaan"
         },
         "hint": {
-          "en": "This flowcard triggers when the power saving zone was entered.",
-          "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone binnengegaan werd."
+          "en": "This flowcard triggers when a power saving zone was entered.",
+          "nl": "Deze kaart wordt geactiveerd wanneer een WiFi-zone binnengegaan werd."
         },
         "platforms": [
           "local",
@@ -388,6 +402,43 @@
         ],
         "highlight": true,
         "id": "in_power_saving_zone_true"
+      },
+      {
+        "title": {
+          "en": "Safe zone was entered",
+          "nl": "Veilige zone werd binnengegaan"
+        },
+        "hint": {
+          "en": "This flowcard triggers when a safe zone was entered.",
+          "nl": "Deze kaart wordt geactiveerd wanneer een veilige zone binnengegaan werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "tokens": [
+          {
+            "type": "string",
+            "name": "geofence",
+            "title": {
+              "en": "Fence",
+              "nl": "Omheining"
+            },
+            "example": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=in_geofence"
+          }
+        ],
+        "highlight": true,
+        "id": "in_safe_zone_true"
       },
       {
         "title": {

@@ -4,8 +4,8 @@
     "nl": "WiFi-zone werd verlaten"
   },
   "hint": {
-    "en": "This flowcard triggers when the power saving zone was left.",
-    "nl": "Deze kaart wordt geactiveerd wanneer WiFi-zone verlaten werd."
+    "en": "This flowcard triggers when a power saving zone was left.",
+    "nl": "Deze kaart wordt geactiveerd wanneer een WiFi-zone verlaten werd."
   },
   "platforms": [
     "local",
