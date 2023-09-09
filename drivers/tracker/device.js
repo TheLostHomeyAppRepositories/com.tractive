@@ -292,7 +292,12 @@ class TrackerDevice extends Device {
     for (const fence of fences) {
       // Circle
       if (fence.shape === 'circle') {
-        if (geo.isPointWithinRadius(coordinates, fence.coords, fence.radius)) {
+        const latlong = {
+          latitude: fence.coords[0][0],
+          longitude: fence.coords[0][1],
+        };
+
+        if (geo.isPointWithinRadius(coordinates, latlong, fence.radius)) {
           name = fence.name;
         }
       }
