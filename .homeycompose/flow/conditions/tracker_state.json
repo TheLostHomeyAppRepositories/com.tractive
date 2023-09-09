@@ -4,8 +4,8 @@
     "nl": "Trackerstatus !{{is|is niet}}"
   },
   "titleFormatted": {
-    "en": "Tracker state !{{is|is not}} equal to [[tracker_state]]",
-    "nl": "Trackerstatus !{{is|is niet}} gelijk aan [[tracker_state]]"
+    "en": "Tracker state !{{is|is not}} [[tracker_state]]",
+    "nl": "Trackerstatus !{{is|is niet}} [[tracker_state]]"
   },
   "platforms": [
     "local",

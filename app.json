@@ -823,8 +823,8 @@
           "nl": "Batterijstatus !{{is|is niet}}"
         },
         "titleFormatted": {
-          "en": "Battery state !{{is|is not}} equal to [[battery_state]]",
-          "nl": "Batterijstatus !{{is|is niet}} gelijk aan [[battery_state]]"
+          "en": "Battery state !{{is|is not}} [[battery_state]]",
+          "nl": "Batterijstatus !{{is|is niet}} [[battery_state]]"
         },
         "platforms": [
           "local",
@@ -1032,8 +1032,8 @@
           "nl": "Locatiebron !{{is|is niet}}"
         },
         "titleFormatted": {
-          "en": "Location source !{{is|is not}} equal to [[location_source]]",
-          "nl": "Locatiebron !{{is|is niet}} gelijk aan [[location_source]]"
+          "en": "Location source !{{is|is not}} [[location_source]]",
+          "nl": "Locatiebron !{{is|is niet}} [[location_source]]"
         },
         "platforms": [
           "local",
@@ -1082,8 +1082,8 @@
           "nl": "WiFi-zone !{{is|is niet}}"
         },
         "titleFormatted": {
-          "en": "Power saving zone !{{is|is not}} equal to [[power_saving_zone]]",
-          "nl": "WiFi-zone !{{is|is niet}} gelijk aan [[power_saving_zone]]"
+          "en": "Power saving zone !{{is|is not}} [[power_saving_zone]]",
+          "nl": "WiFi-zone !{{is|is niet}} [[power_saving_zone]]"
         },
         "platforms": [
           "local",
@@ -1116,8 +1116,8 @@
           "nl": "Trackerstatus !{{is|is niet}}"
         },
         "titleFormatted": {
-          "en": "Tracker state !{{is|is not}} equal to [[tracker_state]]",
-          "nl": "Trackerstatus !{{is|is niet}} gelijk aan [[tracker_state]]"
+          "en": "Tracker state !{{is|is not}} [[tracker_state]]",
+          "nl": "Trackerstatus !{{is|is niet}} [[tracker_state]]"
         },
         "platforms": [
           "local",

@@ -4,8 +4,8 @@
     "nl": "Batterijstatus !{{is|is niet}}"
   },
   "titleFormatted": {
-    "en": "Battery state !{{is|is not}} equal to [[battery_state]]",
-    "nl": "Batterijstatus !{{is|is niet}} gelijk aan [[battery_state]]"
+    "en": "Battery state !{{is|is not}} [[battery_state]]",
+    "nl": "Batterijstatus !{{is|is niet}} [[battery_state]]"
   },
   "platforms": [
     "local",

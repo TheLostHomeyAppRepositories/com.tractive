@@ -4,8 +4,8 @@
     "nl": "Locatiebron !{{is|is niet}}"
   },
   "titleFormatted": {
-    "en": "Location source !{{is|is not}} equal to [[location_source]]",
-    "nl": "Locatiebron !{{is|is niet}} gelijk aan [[location_source]]"
+    "en": "Location source !{{is|is not}} [[location_source]]",
+    "nl": "Locatiebron !{{is|is niet}} [[location_source]]"
   },
   "platforms": [
     "local",
