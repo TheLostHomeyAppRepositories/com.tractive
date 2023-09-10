@@ -25,9 +25,9 @@
       },
       "values": [
         {
-          "id": "cell_locate",
+          "id": "phone",
           "title": {
-            "en": "Telefoon"
+            "en": "Bluetooth"
           }
         },
         {
