@@ -308,14 +308,17 @@ class TrackerDevice extends Device {
         }
       }
 
-      // Rectangle
-      if (fence.shape === 'rectangle') {
-        // Todo
-      }
+      // Rectangle and polygon
+      if (fence.shape === 'rectangle' || fence.shape === 'polygon') {
+        const coords = [];
 
-      // Polygon
-      if (fence.shape === 'polygon') {
-        // Todo
+        for (const coord of fence.coords) {
+          coords.push({ latitude: coord[0], longitude: coord[1] });
+        }
+
+        if (geo.isPointInPolygon(coordinates, coords)) {
+          return fence;
+        }
       }
     }
 
