@@ -13,5 +13,6 @@
       "name": "device",
       "filter": "driver_id=tracker&capabilities=in_geofence"
     }
-  ]
+  ],
+  "highlight": true
 }

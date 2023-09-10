@@ -1,11 +1,11 @@
 {
   "title": {
-    "en": "Safe zone was entered",
-    "nl": "Veilige zone werd binnengegaan"
+    "en": "Danger zone was entered",
+    "nl": "Gevarenzone werd binnengegaan"
   },
   "hint": {
-    "en": "This flowcard triggers when a safe zone was entered.",
-    "nl": "Deze kaart wordt geactiveerd wanneer een veilige zone binnengegaan werd."
+    "en": "This flowcard triggers when a danger zone was entered.",
+    "nl": "Deze kaart wordt geactiveerd wanneer een gevarenzone binnengegaan werd."
   },
   "platforms": [
     "local",
