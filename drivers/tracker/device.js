@@ -277,7 +277,7 @@ class TrackerDevice extends Device {
   async syncWarning(data) {
     // Tracker state reason
     if ('tracker_state_reason' in data) {
-      const reasons = ['out_of_battery', 'shutdown_by_user'];
+      const reasons = ['not_reporting', 'out_of_battery', 'shutdown_by_user'];
 
       if (reasons.includes(data.tracker_state_reason)) {
         return this.setWarning(this.homey.__(`state.${data.tracker_state_reason}`));
