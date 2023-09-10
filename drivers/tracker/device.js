@@ -338,7 +338,7 @@ class TrackerDevice extends Device {
     }
 
     let fences = [];
-    let active = raw.filter((entry) => entry.active && filled(entry.name) && blank(entry.deleted_at));
+    let active = raw.filter((entry) => entry.active && filled(entry.name));
 
     raw = null;
 
