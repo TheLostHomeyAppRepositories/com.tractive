@@ -1,4 +1,7 @@
 {
+  "1.2.0": {
+    "en": "Added virtual fence related capabilities and flow cards. Improved flow cards."
+  },
   "1.1.0": {
     "en": "Added multiple Power Saving Zones- and location related capabilities and flow cards. Bugfixes and stability improvements."
   },
