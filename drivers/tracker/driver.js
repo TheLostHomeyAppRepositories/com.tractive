@@ -67,7 +67,6 @@ class TrackerDriver extends Driver {
     return {
       tracker_id: device._id || null,
       pet_id: device.pet._id || null,
-      subscription_id: device.subscription._id || null,
     };
   }
 
