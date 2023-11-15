@@ -1,4 +1,7 @@
 {
+  "1.2.1": {
+    "en": "Improved error handling. Removed unnecessary API requests."
+  },
   "1.2.0": {
     "en": "Added virtual fence related capabilities and flow cards. Improved flow cards."
   },
