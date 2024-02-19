@@ -8,19 +8,6 @@ const { filled, blank } = require('../../lib/Utils');
 class TrackerDevice extends Device {
 
   /*
-  | Device events
-  */
-
-  // Device initialized
-  async onOAuth2Init() {
-    // Synchronize
-    await this.sync();
-
-    // Initiate device
-    await super.onOAuth2Init();
-  }
-
-  /*
   | Synchronization functions
   */
 
