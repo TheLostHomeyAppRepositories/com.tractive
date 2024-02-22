@@ -212,7 +212,7 @@ class TrackerDevice extends Device {
       // Handle data
       await this.handleSyncData(data);
     } catch (err) {
-      this.error('[Sync]', err.message);
+      this.error('[Sync]', err.toString());
     } finally {
       data = null;
     }
