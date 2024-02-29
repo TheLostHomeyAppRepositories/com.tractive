@@ -197,27 +197,6 @@ class TrackerDevice extends Device {
     }
   }
 
-  // Synchronize
-  async sync() {
-    let data;
-
-    try {
-      const { id } = this.getData();
-
-      // Get tracker data from API
-      data = await this.oAuth2Client.getTracker(id);
-
-      this.log('[Sync] Received:', JSON.stringify(data));
-
-      // Handle data
-      await this.handleSyncData(data);
-    } catch (err) {
-      this.error('[Sync]', err.toString());
-    } finally {
-      data = null;
-    }
-  }
-
   // Synchronize capabilites
   async syncCapabilities(data) {
     // Geofence
