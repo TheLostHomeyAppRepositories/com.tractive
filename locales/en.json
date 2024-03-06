@@ -12,8 +12,8 @@
     "restart_app": "Please restart the Tractive app."
   },
   "state": {
-    "not_reporting": "Device is not connected with the Tractive servers.",
-    "out_of_battery": "Battery is empty, the device may not work as expected.",
-    "shutdown_by_user": "Device is turned off, the device may not work as expected."
+    "not_reporting": "Disconnected from the Tractive servers.",
+    "out_of_battery": "The battery is empty.",
+    "shutdown_by_user": "The device is turned off."
   }
 }

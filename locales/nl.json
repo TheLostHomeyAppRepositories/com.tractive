@@ -12,8 +12,8 @@
     "restart_app": "Start de Tractive app opnieuw op."
   },
   "state": {
-    "not_reporting": "Apparaat is niet verbonden met de servers van Tractive.",
-    "out_of_battery": "Batterij is leeg, het apparaat werkt mogelijk niet zoals verwacht.",
-    "shutdown_by_user": "Apparaat is uitgeschakeld, het apparaat werkt mogelijk niet zoals verwacht."
+    "not_reporting": "Niet verbonden met de servers van Tractive.",
+    "out_of_battery": "De batterij is leeg.",
+    "shutdown_by_user": "Het apparaat is uitgeschakeld."
   }
 }
