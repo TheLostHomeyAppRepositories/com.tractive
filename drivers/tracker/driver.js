@@ -46,14 +46,6 @@ class TrackerDriver extends Driver {
     };
   }
 
-  // Return store value while pairing
-  getPairStore(device) {
-    return {
-      tracker_id: device._id || null,
-      pet_id: device.pet._id || null,
-    };
-  }
-
 }
 
 module.exports = TrackerDriver;
