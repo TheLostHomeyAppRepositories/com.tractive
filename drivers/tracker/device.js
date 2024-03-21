@@ -152,8 +152,14 @@ class TrackerDevice extends Device {
       const longitude = Number(data.latlong[1]);
 
       if (lat !== latitude || long !== longitude) {
-        // Address
-        data.address = await this.oAuth2Client.getAddress(latitude, longitude);
+        try {
+          // Address
+          data.address = await this.oAuth2Client.getAddress(latitude, longitude);
+        } catch (err) {
+          this.error('[getAddress]', err.toString());
+
+          delete data.address;
+        }
 
         // Geofence
         let geofence = await this.getGeofence({ latitude, longitude });
@@ -335,10 +341,16 @@ class TrackerDevice extends Device {
       return zones[id];
     }
 
-    // Get Power Saving Zone from API
-    const zone = await this.oAuth2Client.getPowerSavingZone(id);
+    try {
+      // Get Power Saving Zone from API
+      const zone = await this.oAuth2Client.getPowerSavingZone(id);
 
-    return (zone.name || '').trim();
+      return (zone.name || '').trim();
+    } catch (err) {
+      this.error('[getPowerSavingZoneName]', err.toString());
+
+      return '';
+    }
   }
 
   // Save Power Saving Zones in store
