@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": {
-    "en": "Virtual Fence",
+    "en": "Virtual fence",
     "nl": "Virtuele omheining"
   },
   "getable": true,

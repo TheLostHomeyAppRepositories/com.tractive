@@ -1,7 +1,7 @@
 {
   "type": "boolean",
   "title": {
-    "en": "In Virtual Fence",
+    "en": "In virtual fence",
     "nl": "In virtuele omheining"
   },
   "getable": true,
@@ -10,11 +10,11 @@
   "uiComponent": "sensor",
   "icon": "/assets/capabilities/geofence.svg",
   "insightsTitleTrue": {
-    "en": "Entered Virtual Fence",
+    "en": "Entered virtual fence",
     "nl": "Virtuele omheining binnengegaan"
   },
   "insightsTitleFalse": {
-    "en": "Left Virtual Fence",
+    "en": "Left virtual fence",
     "nl": "Virtuele omheining verlaten"
   }
 }

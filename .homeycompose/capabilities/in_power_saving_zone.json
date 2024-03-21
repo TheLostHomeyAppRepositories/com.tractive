@@ -1,7 +1,7 @@
 {
   "type": "boolean",
   "title": {
-    "en": "In Power Saving Zone",
+    "en": "In power saving zone",
     "nl": "In WiFi-zone"
   },
   "getable": true,

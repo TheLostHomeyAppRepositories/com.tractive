@@ -1,7 +1,7 @@
 {
   "type": "string",
   "title": {
-    "en": "Power Saving Zone",
+    "en": "Power saving zone",
     "nl": "WiFi-zone"
   },
   "getable": true,

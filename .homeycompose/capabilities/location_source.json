@@ -1,7 +1,7 @@
 {
   "type": "enum",
   "title": {
-    "en": "Location Source",
+    "en": "Location source",
     "nl": "Locatiebron"
   },
   "getable": true,
