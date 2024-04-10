@@ -382,7 +382,7 @@ class TrackerDevice extends Device {
 
   async setBuzzer(enabled) {
     if (enabled && this.getCapabilityValue('tracker_state') === 'power_saving') {
-      throw new Error(this.homey.__('errors.power_saving_sound'));
+      throw new Error(this.homey.__('error.power_saving_sound'));
     }
 
     return this.oAuth2Client.setBuzzer(this.getData().id, enabled);
@@ -390,7 +390,7 @@ class TrackerDevice extends Device {
 
   async setLight(enabled) {
     if (enabled && this.getCapabilityValue('tracker_state') === 'power_saving') {
-      throw new Error(this.homey.__('errors.power_saving_light'));
+      throw new Error(this.homey.__('error.power_saving_light'));
     }
 
     return this.oAuth2Client.setLight(this.getData().id, enabled);
