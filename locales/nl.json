@@ -1,4 +1,7 @@
 {
+  "authentication": {
+    "connecting": "Bezig met verbinden..."
+  },
   "error": {
     "401": "Inloggegevens van de Tractive API zijn onjuist",
     "403": "Tractive API heeft de toegang tot dit apparaat geweigerd",

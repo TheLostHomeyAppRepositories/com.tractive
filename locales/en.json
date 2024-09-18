@@ -1,4 +1,7 @@
 {
+  "authentication": {
+    "connecting": "Connecting..."
+  },
   "error": {
     "401": "Tractive API credentials are incorrect",
     "403": "Tractive API has denied access to this device",
