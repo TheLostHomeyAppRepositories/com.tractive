@@ -13,5 +13,8 @@
   },
   "1.3.0": {
     "en": "Allow read only trackers. Improved error handling. Optimized number of API requests."
+  },
+  "1.4.0": {
+    "en": "Added charging state triggers and bugfixes."
   }
 }
