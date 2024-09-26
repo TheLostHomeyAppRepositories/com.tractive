@@ -234,6 +234,50 @@
       },
       {
         "title": {
+          "en": "Charging was stopped",
+          "nl": "Opladen werd gestopt"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the charging was stopped.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het opladen gestopt werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=charging_state"
+          }
+        ],
+        "id": "charging_state_false"
+      },
+      {
+        "title": {
+          "en": "Charging was started",
+          "nl": "Opladen werd gestart"
+        },
+        "hint": {
+          "en": "This flowcard triggers when the charging was started.",
+          "nl": "Deze kaart wordt geactiveerd wanneer het opladen gestart werd."
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker&capabilities=charging_state"
+          }
+        ],
+        "id": "charging_state_true"
+      },
+      {
+        "title": {
           "en": "Virtual fence changed",
           "nl": "Virtuele omheining is veranderd"
         },
