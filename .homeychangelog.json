@@ -16,5 +16,8 @@
   },
   "1.4.0": {
     "en": "Added charging state triggers and bugfixes."
+  },
+  "1.4.1": {
+    "en": "Stability improvements"
   }
 }
