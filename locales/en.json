@@ -11,8 +11,7 @@
     "network": "Tractive API is unreachable",
     "unknown": "An unknown error has occurred",
     "power_saving_light": "Light is disabled in the Power Saving Zone",
-    "power_saving_sound": "Sound is disabled in the Power Saving Zone",
-    "restart_app": "Please restart the Tractive app"
+    "power_saving_sound": "Sound is disabled in the Power Saving Zone"
   },
   "warning": {
     "not_reporting": "Disconnected from the Tractive servers.",

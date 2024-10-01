@@ -11,8 +11,7 @@
     "network": "Tractive API is niet bereikbaar",
     "unknown": "Er is een onbekende fout opgetreden",
     "power_saving_light": "Licht is uitgeschakeld in de WiFi-zone",
-    "power_saving_sound": "Geluid is uitgeschakeld in de WiFi-zone",
-    "restart_app": "Start de Tractive app opnieuw op."
+    "power_saving_sound": "Geluid is uitgeschakeld in de WiFi-zone"
   },
   "warning": {
     "not_reporting": "Niet verbonden met de servers van Tractive.",
