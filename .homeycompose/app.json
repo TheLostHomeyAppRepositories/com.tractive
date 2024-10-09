@@ -1,6 +1,6 @@
 {
   "id": "com.tractive",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "compatibility": ">=7.4.0",
   "platforms": [
     "local",
