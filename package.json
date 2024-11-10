@@ -26,7 +26,7 @@
     "collect.js": "^4.36.1",
     "geolib": "^3.3.4",
     "homey-log": "^2.1.0",
-    "homey-oauth2app": "^3.5.7",
+    "homey-oauth2app": "^3.6.0",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
