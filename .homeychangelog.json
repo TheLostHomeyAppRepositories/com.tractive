@@ -22,5 +22,8 @@
   },
   "1.4.2": {
     "en": "Fixed device repair."
+  },
+  "1.4.3": {
+    "en": "Technical change regarding the API."
   }
 }
