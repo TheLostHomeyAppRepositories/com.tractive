@@ -1,3 +1,7 @@
-With the Tractive GPS tracker you can locate your dog or cat anytime, anywhere. You just need to turn on the tracker and attach it to your pet's collar, after which the tracker will start reporting the location, which you can then use in different flows.
+The Tractive Homey App integrates your Tractive GPS pet tracker with your Homey smart home system, ensuring your pet’s safety while adding convenience to your daily routine. This app allows you to monitor your pet’s location and activity directly through Homey, providing peace of mind and actionable insights.
 
-IMPORTANT: You need an active Tractive account and subscription to use this app.
+With the Tractive Homey App, you can create automations to respond to your pet's movements. For example, set up notifications if your pet leaves a predefined safe zone or activate specific devices, such as turning on garden lights when your pet enters the yard.
+
+Whether you’re ensuring your pet’s safety, improving their lifestyle, or enhancing your smart home experience, the Tractive Homey App makes pet care smarter and more connected.
+
+To use this app, you need an active Tractive account and subscription.
